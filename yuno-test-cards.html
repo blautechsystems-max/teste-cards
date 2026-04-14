@@ -1,1162 +1,425 @@
-<!DOCTYPE html><!DOCTYPE html>
-
-<html lang="pt-BR" data-theme="dark"><html lang="pt-BR" data-theme="dark">
-
-<head><head>
-
-<meta charset="UTF-8"><meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cartões de Teste · Yuno &amp; Mercado Pago</title><title>Yuno · Test Cards</title>
-
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style><style>
-
-  :root { --transition-theme: background .22s ease, color .22s ease, border-color .22s ease, box-shadow .22s ease; }  /* ── Tokens ── */
-
-  :root {
-
-  [data-theme="dark"] {    --transition-theme: background .22s ease, color .22s ease, border-color .22s ease, box-shadow .22s ease;
-
-    --bg: #0d0e11; --bg2: #111318; --surface: #181b21; --surface2: #1f2229; --surface3: #262b35;  }
-
-    --border: #2a2f3a; --border2: #363d4a;
-
-    --text: #eef0f4; --text2: #8b92a5; --text3: #545d72;  [data-theme="dark"] {
-
-    --accent: #5b8af5; --accent-soft: rgba(91,138,245,.12); --accent-glow: rgba(91,138,245,.25);    --bg: #0d0e11;
-
-    --green: #34d671; --green-soft: rgba(52,214,113,.12);    --bg2: #111318;
-
-    --red: #f25858; --red-soft: rgba(242,88,88,.12);    --surface: #181b21;
-
-    --yellow: #f5a623; --yellow-soft: rgba(245,166,35,.12);    --surface2: #1f2229;
-
-    --blue: #5b8af5; --blue-soft: rgba(91,138,245,.12);    --surface3: #262b35;
-
-    --purple: #a78bfa; --purple-soft: rgba(167,139,250,.12);    --border: #2a2f3a;
-
-    --shadow: 0 1px 3px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);    --border2: #363d4a;
-
-    --shadow-lg: 0 4px 32px rgba(0,0,0,.5), 0 1px 4px rgba(0,0,0,.4);    --text: #eef0f4;
-
-    --shadow-card: 0 0 0 1px rgba(255,255,255,.04), 0 2px 8px rgba(0,0,0,.4);    --text2: #8b92a5;
-
-    --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");    --text3: #545d72;
-
-    --hero-gradient: linear-gradient(135deg, rgba(91,138,245,.08) 0%, rgba(167,139,250,.06) 50%, rgba(52,214,113,.04) 100%);    --accent: #5b8af5;
-
-  }    --accent-soft: rgba(91,138,245,.12);
-
-  [data-theme="light"] {    --accent-glow: rgba(91,138,245,.25);
-
-    --bg: #f5f5f2; --bg2: #efefe9; --surface: #ffffff; --surface2: #f2f2ef; --surface3: #eaeae5;    --green: #34d671;
-
-    --border: #e0e0d8; --border2: #c8c8bf;    --green-soft: rgba(52,214,113,.12);
-
-    --text: #111110; --text2: #6b6b63; --text3: #9d9d93;    --red: #f25858;
-
-    --accent: #2b5ce6; --accent-soft: rgba(43,92,230,.1); --accent-glow: rgba(43,92,230,.18);    --red-soft: rgba(242,88,88,.12);
-
-    --green: #16a34a; --green-soft: rgba(22,163,74,.1);    --yellow: #f5a623;
-
-    --red: #dc2626; --red-soft: rgba(220,38,38,.1);    --yellow-soft: rgba(245,166,35,.12);
-
-    --yellow: #d97706; --yellow-soft: rgba(217,119,6,.1);    --blue: #5b8af5;
-
-    --blue: #2563eb; --blue-soft: rgba(37,99,235,.1);    --blue-soft: rgba(91,138,245,.12);
-
-    --purple: #7c3aed; --purple-soft: rgba(124,58,237,.1);    --shadow: 0 1px 3px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
-
-    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);    --shadow-lg: 0 4px 32px rgba(0,0,0,.5), 0 1px 4px rgba(0,0,0,.4);
-
-    --shadow-lg: 0 4px 24px rgba(0,0,0,.1), 0 1px 4px rgba(0,0,0,.06);    --shadow-card: 0 0 0 1px rgba(255,255,255,.04), 0 2px 8px rgba(0,0,0,.4);
-
-    --shadow-card: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);    --glow-success: 0 0 20px rgba(52,214,113,.08);
-
-    --noise: none;    --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
-
-    --hero-gradient: linear-gradient(135deg, rgba(43,92,230,.06) 0%, rgba(124,58,237,.04) 50%, rgba(22,163,74,.03) 100%);  }
-
-  }
-
-  [data-theme="light"] {
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }    --bg: #f5f5f2;
-
-  body {    --bg2: #efefe9;
-
-    font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text);    --surface: #ffffff;
-
-    min-height: 100vh; transition: var(--transition-theme); background-image: var(--noise);    --surface2: #f2f2ef;
-
-  }    --surface3: #eaeae5;
-
-    --border: #e0e0d8;
-
-  /* ── Hero ── */    --border2: #c8c8bf;
-
-  .hero {    --text: #111110;
-
-    background: var(--hero-gradient);    --text2: #6b6b63;
-
-    border-bottom: 1px solid var(--border);    --text3: #9d9d93;
-
-    padding: 32px 20px 28px;    --accent: #2b5ce6;
-
-  }    --accent-soft: rgba(43,92,230,.1);
-
-  .hero-inner {    --accent-glow: rgba(43,92,230,.18);
-
-    max-width: 1060px; margin: 0 auto;    --green: #16a34a;
-
-    display: flex; align-items: flex-start; justify-content: space-between;    --green-soft: rgba(22,163,74,.1);
-
-    gap: 16px; flex-wrap: wrap;    --red: #dc2626;
-
-  }    --red-soft: rgba(220,38,38,.1);
-
-  .hero-left { display: flex; flex-direction: column; gap: 10px; }    --yellow: #d97706;
-
-  .hero-badges { display: flex; gap: 8px; flex-wrap: wrap; }    --yellow-soft: rgba(217,119,6,.1);
-
-  .badge {    --blue: #2563eb;
-
-    display: inline-flex; align-items: center; gap: 6px;    --blue-soft: rgba(37,99,235,.1);
-
-    font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600;    --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.04);
-
-    letter-spacing: .1em; text-transform: uppercase;    --shadow-lg: 0 4px 24px rgba(0,0,0,.1), 0 1px 4px rgba(0,0,0,.06);
-
-    padding: 5px 10px; border-radius: 6px; white-space: nowrap;    --shadow-card: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
-
-  }    --glow-success: 0 0 0 rgba(0,0,0,0);
-
-  .badge-sandbox { background: var(--green-soft); color: var(--green); border: 1px solid rgba(52,214,113,.2); }    --noise: none;
-
-  .badge-sandbox .dot {  }
-
-    width: 6px; height: 6px; border-radius: 50%; background: var(--green);
-
-    box-shadow: 0 0 6px var(--green); animation: pulse 2.4s ease-in-out infinite;  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  }
-
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }  body {
-
-  .badge-yuno { background: var(--accent-soft); color: var(--accent); border: 1px solid rgba(91,138,245,.2); }    font-family: 'DM Sans', sans-serif;
-
-  .badge-mp { background: var(--blue-soft); color: var(--blue); border: 1px solid rgba(91,138,245,.2); }    background: var(--bg);
-
-    color: var(--text);
-
-  .hero h1 { font-size: 26px; font-weight: 700; letter-spacing: -.04em; line-height: 1.1; }    min-height: 100vh;
-
-  .hero p { font-size: 14px; color: var(--text2); max-width: 560px; line-height: 1.55; margin-top: 2px; }    padding: 28px 20px 80px;
-
-    transition: var(--transition-theme);
-
-  .hero-right { display: flex; align-items: center; gap: 10px; padding-top: 6px; }    background-image: var(--noise);
-
-  .theme-toggle {  }
-
-    width: 36px; height: 36px; border-radius: 9px; border: 1px solid var(--border);
-
-    background: var(--surface2); cursor: pointer;  .wrap { max-width: 1000px; margin: 0 auto; }
-
-    display: flex; align-items: center; justify-content: center;
-
-    color: var(--text2); transition: all .18s; flex-shrink: 0;  .header {
-
-  }    display: flex; align-items: center; justify-content: space-between;
-
-  .theme-toggle:hover { background: var(--surface3); color: var(--text); }    gap: 16px; margin-bottom: 36px; flex-wrap: wrap;
-
-  .theme-toggle svg { width: 16px; height: 16px; }  }
-
-  .icon-sun { display: none; } .icon-moon { display: block; }  .header-left { display: flex; align-items: center; gap: 16px; }
-
-  [data-theme="light"] .icon-sun { display: block; }  .logo-badge {
-
-  [data-theme="light"] .icon-moon { display: none; }    display: flex; align-items: center; gap: 7px;
-
-    background: var(--surface2); border: 1px solid var(--border);
-
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px 80px; }    color: var(--text); font-family: 'IBM Plex Mono', monospace;
-
-    font-size: 10px; font-weight: 600; letter-spacing: .1em;
-
-  /* ── Provider Tabs ── */    text-transform: uppercase; padding: 6px 12px; border-radius: 8px; white-space: nowrap;
-
-  .provider-bar {  }
-
-    display: flex; align-items: center; gap: 0;  .logo-dot {
-
-    border-bottom: 2px solid var(--border); margin-top: 24px; margin-bottom: 24px;    width: 6px; height: 6px; border-radius: 50%;
-
-    overflow-x: auto;    background: var(--green); box-shadow: 0 0 6px var(--green);
-
-  }    animation: pulse 2.4s ease-in-out infinite; flex-shrink: 0;
-
-  .prov-tab {  }
-
-    padding: 10px 20px; border: none; background: none;  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
-
-    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;  .header-title { font-size: 20px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
-
-    color: var(--text3); cursor: pointer; position: relative; white-space: nowrap;  .header-sub { font-size: 12px; color: var(--text3); margin-top: 4px; font-weight: 400; }
-
-    transition: color .15s;  .header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-
-  }
-
-  .prov-tab:hover { color: var(--text2); }  .theme-toggle {
-
-  .prov-tab.active { color: var(--accent); }    width: 36px; height: 36px; border-radius: 9px;
-
-  .prov-tab.active::after {    border: 1px solid var(--border); background: var(--surface2);
-
-    content: ''; position: absolute; left: 0; right: 0; bottom: -2px;    cursor: pointer; display: flex; align-items: center; justify-content: center;
-
-    height: 2px; background: var(--accent); border-radius: 2px;    color: var(--text2); transition: all .18s; flex-shrink: 0;
-
-  }  }
-
-  .theme-toggle:hover { background: var(--surface3); color: var(--text); }
-
-  /* ── Sub-tabs ── */  .theme-toggle svg { width: 16px; height: 16px; }
-
-  .sub-tabs {  .icon-sun { display: none; } .icon-moon { display: block; }
-
-    display: flex; gap: 4px; background: var(--surface2);  [data-theme="light"] .icon-sun { display: block; }
-
-    border: 1px solid var(--border); border-radius: 10px;  [data-theme="light"] .icon-moon { display: none; }
-
-    padding: 3px; margin-bottom: 20px; width: fit-content;
-
-  }  .provider-tabs {
-
-  .sub-tab {    display: flex; gap: 4px; background: var(--surface2);
-
-    padding: 5px 14px; border-radius: 7px; border: none; background: transparent;    border: 1px solid var(--border); border-radius: 10px; padding: 3px;
-
-    font-family: 'DM Sans', sans-serif; font-size: 12.5px; font-weight: 500;  }
-
-    color: var(--text2); cursor: pointer; transition: all .18s; white-space: nowrap;  .tab-btn {
-
-  }    padding: 6px 16px; border-radius: 7px; border: none; background: transparent;
-
-  .sub-tab.active { background: var(--surface3); color: var(--text); box-shadow: 0 1px 3px rgba(0,0,0,.2); }    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
-
-  .sub-tab:hover:not(.active) { color: var(--text); }    color: var(--text2); cursor: pointer; transition: all .18s; white-space: nowrap;
-
-  }
-
-  .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; margin-top: 28px; }  .tab-btn.active {
-
-  .section-head:first-child { margin-top: 0; }    background: var(--surface3); color: var(--text);
-
-  .section-label {    box-shadow: 0 1px 3px rgba(0,0,0,.2);
-
-    font-size: 10.5px; font-weight: 600; letter-spacing: .12em;  }
-
-    text-transform: uppercase; color: var(--text3); white-space: nowrap;  .tab-btn:hover:not(.active) { color: var(--text); }
-
-    font-family: 'IBM Plex Mono', monospace;
-
-  }  .section-head {
-
-  .section-line { flex: 1; height: 1px; background: var(--border); }    display: flex; align-items: center; gap: 12px;
-
-    margin-bottom: 14px; margin-top: 36px;
-
-  .cards-grid {  }
-
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(296px, 1fr));  .section-head:first-child { margin-top: 0; }
-
-    gap: 10px; margin-bottom: 6px;  .section-label {
-
-  }    font-size: 10.5px; font-weight: 600; letter-spacing: .12em;
-
-    text-transform: uppercase; color: var(--text3); white-space: nowrap;
-
-  .card {    font-family: 'IBM Plex Mono', monospace;
-
-    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;  }
-
-    box-shadow: var(--shadow-card); overflow: hidden;  .section-line { flex: 1; height: 1px; background: var(--border); }
-
-    transition: transform .18s, box-shadow .18s, border-color .18s; position: relative;
-
-  }  .cards-grid {
-
-  .card:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); border-color: var(--border2); }    display: grid; grid-template-columns: repeat(auto-fill, minmax(296px, 1fr));
-
-  .card[data-status="success"] { border-left: 3px solid var(--green); }    gap: 10px; margin-bottom: 6px;
-
-  .card[data-status="error"]   { border-left: 3px solid var(--red); }  }
-
-  .card[data-status="pending"] { border-left: 3px solid var(--yellow); }
-
-  .card[data-status="info"]    { border-left: 3px solid var(--blue); }  .card {
-
-    background: var(--surface); border: 1px solid var(--border);
-
-  .card-header {    border-radius: 14px; box-shadow: var(--shadow-card);
-
-    display: flex; align-items: center; justify-content: space-between;    overflow: hidden; transition: transform .18s, box-shadow .18s, border-color .18s;
-
-    padding: 12px 14px 10px; border-bottom: 1px solid var(--border); gap: 8px;    position: relative;
-
-  }  }
-
-  .card-brand { display: flex; align-items: center; gap: 9px; min-width: 0; }  .card:hover {
-
-  .brand-icon {    transform: translateY(-1px); box-shadow: var(--shadow-lg);
-
-    width: 38px; height: 25px; border-radius: 5px;    border-color: var(--border2);
-
-    display: flex; align-items: center; justify-content: center;  }
-
-    font-size: 9px; font-weight: 800; letter-spacing: .04em; flex-shrink: 0;  .card[data-status="success"] { border-left: 3px solid var(--green); }
-
-    font-family: 'IBM Plex Mono', monospace;  .card[data-status="error"]   { border-left: 3px solid var(--red); }
-
-  }  .card[data-status="pending"] { border-left: 3px solid var(--yellow); }
-
-  .brand-icon.visa { background: linear-gradient(135deg,#1a1f71,#2a35a8); color: #fff; font-size: 10px; letter-spacing: .06em; }  .card[data-status="info"]    { border-left: 3px solid var(--blue); }
-
-  .brand-icon.mastercard { background: linear-gradient(135deg,#1a1a1a,#333); position: relative; overflow: hidden; }
-
-  .brand-icon.mastercard::before, .brand-icon.mastercard::after { content:''; position:absolute; width:18px; height:18px; border-radius:50%; }  .card-header {
-
-  .brand-icon.mastercard::before { background:#eb001b; left:3px; }    display: flex; align-items: center; justify-content: space-between;
-
-  .brand-icon.mastercard::after { background:#f79e1b; right:3px; opacity:.85; }    padding: 12px 14px 10px; border-bottom: 1px solid var(--border); gap: 8px;
-
-  .brand-icon.amex { background: linear-gradient(135deg,#006fcf,#009ddc); color: #fff; font-size: 8px; }  }
-
-  .brand-icon.elo { background: linear-gradient(135deg,#111,#333); color: #FFD700; font-size: 9px; }  .card-brand { display: flex; align-items: center; gap: 9px; min-width: 0; }
-
-  .brand-name { font-size: 12.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em; }  .brand-icon {
-
-    width: 38px; height: 25px; border-radius: 5px;
-
-  .status-badge {    display: flex; align-items: center; justify-content: center;
-
-    font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px;    font-size: 9px; font-weight: 800; letter-spacing: .04em; flex-shrink: 0;
-
-    letter-spacing: .04em; white-space: nowrap; font-family: 'IBM Plex Mono', monospace; flex-shrink: 0;    font-family: 'IBM Plex Mono', monospace;
-
-  }  }
-
-  .status-badge.success { background: var(--green-soft); color: var(--green); border: 1px solid rgba(52,214,113,.2); }  .brand-icon.visa { background: linear-gradient(135deg,#1a1f71,#2a35a8); color: #fff; font-size: 10px; letter-spacing: .06em; }
-
-  .status-badge.error   { background: var(--red-soft); color: var(--red); border: 1px solid rgba(242,88,88,.2); }  .brand-icon.mastercard {
-
-  .status-badge.pending { background: var(--yellow-soft); color: var(--yellow); border: 1px solid rgba(245,166,35,.2); }    background: linear-gradient(135deg,#1a1a1a 0%,#333 100%);
-
-  .status-badge.info    { background: var(--blue-soft); color: var(--blue); border: 1px solid rgba(91,138,245,.2); }    position: relative; overflow: hidden;
-
-  }
-
-  .card-body { padding: 10px 14px 12px; }  .brand-icon.mastercard::before, .brand-icon.mastercard::after {
-
-  .field-row {    content: ''; position: absolute; width: 18px; height: 18px; border-radius: 50%;
-
-    display: flex; align-items: center; justify-content: space-between;  }
-
-    padding: 5px 0; border-bottom: 1px solid var(--border); gap: 8px;  .brand-icon.mastercard::before { background: #eb001b; left: 3px; }
-
-  }  .brand-icon.mastercard::after { background: #f79e1b; right: 3px; opacity: .85; }
-
-  .field-row:last-child { border-bottom: none; padding-bottom: 0; }  .brand-icon.amex { background: linear-gradient(135deg,#006fcf,#009ddc); color: #fff; font-size: 8px; }
-
-  .field-label {  .brand-name {
-
-    font-size: 10.5px; color: var(--text3); font-weight: 500;    font-size: 12.5px; font-weight: 600; white-space: nowrap;
-
-    letter-spacing: .04em; min-width: 82px; flex-shrink: 0;    overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em;
-
-    font-family: 'IBM Plex Mono', monospace;  }
-
-  }
-
-  .field-value-wrap { display: flex; align-items: center; gap: 7px; min-width: 0; }  .status-badge {
-
-  .field-value {    font-size: 10px; font-weight: 600; padding: 3px 8px;
-
-    font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500;    border-radius: 20px; letter-spacing: .04em; white-space: nowrap;
-
-    color: var(--text); letter-spacing: .04em; white-space: nowrap;    font-family: 'IBM Plex Mono', monospace; flex-shrink: 0;
-
-  }  }
-
-  .field-value.number { font-size: 12px; letter-spacing: .07em; }  .status-badge.success { background: var(--green-soft); color: var(--green); border: 1px solid rgba(52,214,113,.2); }
-
-  .status-badge.error   { background: var(--red-soft); color: var(--red); border: 1px solid rgba(242,88,88,.2); }
-
-  .copy-btn {  .status-badge.pending { background: var(--yellow-soft); color: var(--yellow); border: 1px solid rgba(245,166,35,.2); }
-
-    width: 24px; height: 24px; border-radius: 6px; border: 1px solid var(--border);  .status-badge.info    { background: var(--blue-soft); color: var(--blue); border: 1px solid rgba(91,138,245,.2); }
-
-    background: var(--surface2); cursor: pointer;
-
-    display: flex; align-items: center; justify-content: center;  .card-body { padding: 10px 14px 12px; }
-
-    color: var(--text3); transition: all .15s; flex-shrink: 0;  .field-row {
-
-  }    display: flex; align-items: center; justify-content: space-between;
-
-  .copy-btn:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }    padding: 5px 0; border-bottom: 1px solid var(--border); gap: 8px;
-
-  .copy-btn.copied { background: var(--green-soft); border-color: var(--green); color: var(--green); }  }
-
-  .copy-btn svg { width: 12px; height: 12px; pointer-events: none; }  .field-row:last-child { border-bottom: none; padding-bottom: 0; }
-
-  .field-label {
-
-  .status-table-wrap {    font-size: 10.5px; color: var(--text3); font-weight: 500;
-
-    background: var(--surface); border: 1px solid var(--border);    letter-spacing: .04em; min-width: 82px; flex-shrink: 0;
-
-    border-radius: 14px; box-shadow: var(--shadow-card); overflow: hidden;    font-family: 'IBM Plex Mono', monospace;
-
-  }  }
-
-  .status-table { width: 100%; border-collapse: collapse; }  .field-value-wrap { display: flex; align-items: center; gap: 7px; min-width: 0; }
-
-  .status-table th {  .field-value {
-
-    font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;    font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500;
-
-    color: var(--text3); background: var(--surface2); padding: 10px 16px;    color: var(--text); letter-spacing: .04em; white-space: nowrap;
-
-    text-align: left; border-bottom: 1px solid var(--border);  }
-
-    font-family: 'IBM Plex Mono', monospace;  .field-value.number { font-size: 12px; letter-spacing: .07em; }
-
-  }
-
-  .status-table td {  .copy-btn {
-
-    padding: 10px 16px; border-bottom: 1px solid var(--border);    width: 24px; height: 24px; border-radius: 6px;
-
-    font-size: 13px; transition: background .12s;    border: 1px solid var(--border); background: var(--surface2);
-
-  }    cursor: pointer; display: flex; align-items: center; justify-content: center;
-
-  .status-table tr:last-child td { border-bottom: none; }    color: var(--text3); transition: all .15s; flex-shrink: 0;
-
-  .status-table tr:hover td { background: var(--surface2); }  }
-
-  .code-chip {  .copy-btn:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
-
-    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600;  .copy-btn.copied { background: var(--green-soft); border-color: var(--green); color: var(--green); box-shadow: 0 0 8px rgba(52,214,113,.2); }
-
-    background: var(--accent-soft); border: 1px solid rgba(91,138,245,.18);  .copy-btn svg { width: 12px; height: 12px; pointer-events: none; }
-
-    padding: 2px 8px; border-radius: 5px; color: var(--accent);
-
-    white-space: nowrap; cursor: pointer; transition: all .15s; display: inline-block;  .status-table-wrap {
-
-  }    background: var(--surface); border: 1px solid var(--border);
-
-  .code-chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }    border-radius: 14px; box-shadow: var(--shadow-card); overflow: hidden;
-
-  }
-
-  .panel { display: none; } .panel.active { display: block; }  .status-table { width: 100%; border-collapse: collapse; }
-
-  .sub-panel { display: none; } .sub-panel.active { display: block; }  .status-table th {
-
-    font-size: 10px; font-weight: 600; letter-spacing: .1em;
-
-  .search-bar { position: relative; margin-bottom: 20px; }    text-transform: uppercase; color: var(--text3); background: var(--surface2);
-
-  .search-bar input {    padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--border);
-
-    width: 100%; background: var(--surface); border: 1px solid var(--border);    font-family: 'IBM Plex Mono', monospace;
-
-    border-radius: 10px; padding: 9px 14px 9px 38px;  }
-
-    font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text);  .status-table td {
-
-    outline: none; transition: border-color .15s, box-shadow .15s;    padding: 10px 16px; border-bottom: 1px solid var(--border);
-
-  }    font-size: 13px; transition: background .12s;
-
-  .search-bar input::placeholder { color: var(--text3); }  }
-
-  .search-bar input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }  .status-table tr:last-child td { border-bottom: none; }
-
-  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text3); pointer-events: none; }  .status-table tr:hover td { background: var(--surface2); }
-
-  .search-icon svg { width: 15px; height: 15px; display: block; }  .status-table td:last-child { color: var(--text2); font-size: 12.5px; }
-
-  .code-chip {
-
-  .info-box {    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600;
-
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;    background: var(--accent-soft); border: 1px solid rgba(91,138,245,.18);
-
-    padding: 16px 18px; margin-bottom: 20px; font-size: 13px; line-height: 1.6; color: var(--text2);    padding: 2px 8px; border-radius: 5px; color: var(--accent);
-
-  }    white-space: nowrap; cursor: pointer; transition: all .15s; display: inline-block;
-
-  .info-box strong { color: var(--text); }  }
-
-  .info-box code {  .code-chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-    font-family: 'IBM Plex Mono', monospace; font-size: 12px;
-
-    background: var(--surface2); padding: 1px 6px; border-radius: 4px;  .section-panel { display: block; }
-
-    color: var(--accent); border: 1px solid var(--border);  .section-panel.hidden { display: none; }
-
-  }
-
-  .search-bar { position: relative; margin-bottom: 20px; }
-
-  .toast {  .search-bar input {
-
-    position: fixed; bottom: 28px; left: 50%;    width: 100%; background: var(--surface); border: 1px solid var(--border);
-
-    transform: translateX(-50%) translateY(70px);    border-radius: 10px; padding: 9px 14px 9px 38px;
-
-    background: var(--surface3); border: 1px solid var(--border2);    font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text);
-
-    color: var(--text); font-size: 12.5px; font-weight: 500;    outline: none; transition: border-color .15s, box-shadow .15s;
-
-    padding: 9px 18px; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,.3);  }
-
-    transition: transform .28s cubic-bezier(.34,1.56,.64,1), opacity .2s;  .search-bar input::placeholder { color: var(--text3); }
-
-    opacity: 0; pointer-events: none; z-index: 999; white-space: nowrap;  .search-bar input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
-
-    font-family: 'IBM Plex Mono', monospace;  .search-icon {
-
-    display: flex; align-items: center; gap: 8px;    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
-
-  }    color: var(--text3); pointer-events: none;
-
-  .toast::before { content:''; width:6px; height:6px; border-radius:50%; background:var(--green); flex-shrink:0; }  }
-
-  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }  .search-icon svg { width: 15px; height: 15px; display: block; }
-
-
-
-  .empty-state { text-align: center; padding: 40px 20px; color: var(--text3); font-size: 13px; display: none; }  .toast {
-
-  .empty-state.visible { display: block; }    position: fixed; bottom: 28px; left: 50%;
-
-    transform: translateX(-50%) translateY(70px);
-
-  @media(max-width:700px) {    background: var(--surface3); border: 1px solid var(--border2);
-
-    .hero-inner { flex-direction: column; }    color: var(--text); font-size: 12.5px; font-weight: 500;
-
-    .hero h1 { font-size: 22px; }    padding: 9px 18px; border-radius: 10px;
-
-    .cards-grid { grid-template-columns: 1fr; }    box-shadow: 0 8px 32px rgba(0,0,0,.3);
-
-    .prov-tab { padding: 8px 14px; font-size: 13px; }    transition: transform .28s cubic-bezier(.34,1.56,.64,1), opacity .2s;
-
-    .status-table { font-size: 12px; }    opacity: 0; pointer-events: none; z-index: 999; white-space: nowrap;
-
-    .status-table th, .status-table td { padding: 8px 10px; }    font-family: 'IBM Plex Mono', monospace;
-
-  }    display: flex; align-items: center; gap: 8px;
-
-  ::-webkit-scrollbar { width: 5px; height: 5px; }  }
-
-  ::-webkit-scrollbar-track { background: transparent; }  .toast::before {
-
-  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }    content: ''; width: 6px; height: 6px; border-radius: 50%;
-
-</style>    background: var(--green); flex-shrink: 0;
-
-</head>  }
-
-<body>  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-
-
-
-<!-- ════════ HERO ════════ -->  .empty-state { text-align: center; padding: 40px 20px; color: var(--text3); font-size: 13px; display: none; }
-
-<div class="hero">  .empty-state.visible { display: block; }
-
-  <div class="hero-inner">
-
-    <div class="hero-left">  @media(max-width: 640px) {
-
-      <div class="hero-badges">    .header { flex-direction: column; align-items: flex-start; }
-
-        <span class="badge badge-sandbox"><span class="dot"></span>SANDBOX</span>    .header-right { width: 100%; justify-content: space-between; }
-
-        <span class="badge badge-yuno">YUNO</span>    .cards-grid { grid-template-columns: 1fr; }
-
-        <span class="badge badge-mp">MERCADO PAGO</span>    body { padding: 20px 14px 60px; }
-
-      </div>  }
-
-      <h1>Cartões de Teste</h1>  ::-webkit-scrollbar { width: 5px; height: 5px; }
-
-      <p>Cartões de teste para validar integrações em sandbox. Clique em qualquer valor para copiar. Dados extraídos da documentação oficial de cada provedor.</p>  ::-webkit-scrollbar-track { background: transparent; }
-
-    </div>  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
-
-    <div class="hero-right"></style>
-
-      <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema"></head>
-
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><body>
-
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-      </button><div class="wrap">
-
-    </div>
-
-  </div>  <!-- Header -->
-
-</div>  <div class="header">
-
-    <div class="header-left">
-
-<div class="wrap">      <div class="logo-badge"><div class="logo-dot"></div>SANDBOX</div>
-
-      <div class="header-info">
-
-  <!-- ═══ Provider tabs ═══ -->        <div class="header-title">Yuno · Test Cards</div>
-
-  <div class="provider-bar">        <div class="header-sub">Dados oficiais · clique para copiar</div>
-
-    <button class="prov-tab active" onclick="showProvider('yuno',this)">Yuno</button>      </div>
-
-    <button class="prov-tab" onclick="showProvider('mp',this)">Mercado Pago</button>    </div>
-
-  </div>    <div class="header-right">
-
-      <div class="provider-tabs">
-
-  <!-- ════════ YUNO ════════ -->        <button class="tab-btn active" onclick="showTab('visa',this)">Visa</button>
-
-  <div class="panel active" id="panel-yuno">        <button class="tab-btn" onclick="showTab('mc',this)">Mastercard</button>
-
-    <div class="sub-tabs">        <button class="tab-btn" onclick="showTab('amex',this)">Amex</button>
-
-      <button class="sub-tab active" onclick="showSub('yuno-visa',this)">Visa</button>        <button class="tab-btn" onclick="showTab('3ds',this)">3DS</button>
-
-      <button class="sub-tab" onclick="showSub('yuno-mc',this)">Mastercard</button>        <button class="tab-btn" onclick="showTab('codes',this)">Códigos</button>
-
-      <button class="sub-tab" onclick="showSub('yuno-amex',this)">Amex</button>      </div>
-
-      <button class="sub-tab" onclick="showSub('yuno-3ds',this)">3DS</button>      <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
-
-      <button class="sub-tab" onclick="showSub('yuno-codes',this)">Códigos</button>        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-
-    </div>        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-
-      </button>
-
-    <div class="sub-panel active" id="sub-yuno-visa">    </div>
-
-      <div class="search-bar"><span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'sub-yuno-visa')"></div>  </div>
-
-      <div class="section-head"><span class="section-label">Visa · Yuno Testing Gateway</span><div class="section-line"></div></div>
-
-      <div class="cards-grid" id="grid-yuno-visa"></div>  <!-- ════════ VISA ════════ -->
-
-      <div class="empty-state" id="empty-yuno-visa">Nenhum cartão encontrado.</div>  <div class="section-panel" id="tab-visa">
-
-    </div>    <div class="search-bar">
-
-      <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-
-    <div class="sub-panel" id="sub-yuno-mc">      <input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'tab-visa')">
-
-      <div class="search-bar"><span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'sub-yuno-mc')"></div>    </div>
-
-      <div class="section-head"><span class="section-label">Mastercard · Yuno Testing Gateway</span><div class="section-line"></div></div>
-
-      <div class="cards-grid" id="grid-yuno-mc"></div>    <div class="section-head"><span class="section-label">Visa · Cartões de Teste</span><div class="section-line"></div></div>
-
-      <div class="empty-state" id="empty-yuno-mc">Nenhum cartão encontrado.</div>    <div class="cards-grid" id="grid-visa"></div>
-
-    </div>    <div class="empty-state" id="empty-visa">Nenhum cartão encontrado.</div>
-
-  </div>
-
-    <div class="sub-panel" id="sub-yuno-amex">
-
-      <div class="search-bar"><span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'sub-yuno-amex')"></div>  <!-- ════════ MASTERCARD ════════ -->
-
-      <div class="section-head"><span class="section-label">American Express · Yuno Testing Gateway</span><div class="section-line"></div></div>  <div class="section-panel hidden" id="tab-mc">
-
-      <div class="cards-grid" id="grid-yuno-amex"></div>    <div class="search-bar">
-
-      <div class="empty-state" id="empty-yuno-amex">Nenhum cartão encontrado.</div>      <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-
-    </div>      <input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'tab-mc')">
-
-    </div>
-
-    <div class="sub-panel" id="sub-yuno-3ds">
-
-      <div class="section-head"><span class="section-label">3DS · Mastercard Test Cards (Netcetera NDM)</span><div class="section-line"></div></div>    <div class="section-head"><span class="section-label">Mastercard · Cartões de Teste</span><div class="section-line"></div></div>
-
-      <div class="status-table-wrap" style="overflow-x:auto">    <div class="cards-grid" id="grid-mc"></div>
-
-        <table class="status-table"><thead><tr><th>Número</th><th>3DS 2.x</th><th>3DS 1.x DS</th><th>3DS 1.x ACS</th></tr></thead><tbody id="tbl-3ds"></tbody></table>    <div class="empty-state" id="empty-mc">Nenhum cartão encontrado.</div>
-
-      </div>  </div>
-
-    </div>
-
-  <!-- ════════ AMEX ════════ -->
-
-    <div class="sub-panel" id="sub-yuno-codes">  <div class="section-panel hidden" id="tab-amex">
-
-      <div class="section-head"><span class="section-label">Yuno · Transaction Response Codes</span><div class="section-line"></div></div>    <div class="search-bar">
-
-      <div class="status-table-wrap">      <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-
-        <table class="status-table"><thead><tr><th>Código</th><th>Significado</th></tr></thead><tbody id="tbl-yuno-codes"></tbody></table>      <input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'tab-amex')">
-
-      </div>    </div>
-
-    </div>
-
-  </div>    <div class="section-head"><span class="section-label">American Express · Cartões de Teste</span><div class="section-line"></div></div>
-
-    <div class="cards-grid" id="grid-amex"></div>
-
-  <!-- ════════ MERCADO PAGO ════════ -->    <div class="empty-state" id="empty-amex">Nenhum cartão encontrado.</div>
-
-  <div class="panel" id="panel-mp">  </div>
-
-    <div class="info-box">
-
-      O Mercado Pago fornece <strong>cartões de teste</strong> que permitem testar pagamentos sem usar um cartão real.  <!-- ════════ 3DS ════════ -->
-
-      Combine os dados do cartão com o <strong>nome do titular</strong> (ex: <code>APRO</code>, <code>OTHE</code>) para simular diferentes cenários de pagamento.  <div class="section-panel hidden" id="tab-3ds">
-
-      O campo <strong>CPF</strong> é necessário apenas para alguns status — veja a aba "Status por Titular".    <div class="section-head"><span class="section-label">3DS · Mastercard Test Cards</span><div class="section-line"></div></div>
-
-    </div>    <div class="status-table-wrap">
-
-      <table class="status-table">
-
-    <div class="sub-tabs">        <thead><tr><th>Número</th><th>3DS 2.x Response</th><th>3DS 1.x DS</th><th>3DS 1.x ACS</th></tr></thead>
-
-      <button class="sub-tab active" onclick="showSub('mp-cards',this)">Cartões</button>        <tbody id="tbl-3ds"></tbody>
-
-      <button class="sub-tab" onclick="showSub('mp-status',this)">Status por Titular</button>      </table>
-
-    </div>    </div>
-
-  </div>
-
-    <div class="sub-panel active" id="sub-mp-cards">
-
-      <div class="search-bar"><span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar bandeira ou tipo..." oninput="filterCards(this.value,'sub-mp-cards')"></div>  <!-- ════════ CÓDIGOS ════════ -->
-
-      <div class="section-head"><span class="section-label">Cartões de Crédito &amp; Débito · Mercado Pago</span><div class="section-line"></div></div>  <div class="section-panel hidden" id="tab-codes">
-
-      <div class="cards-grid" id="grid-mp-cards"></div>    <div class="section-head"><span class="section-label">Transaction Response Codes</span><div class="section-line"></div></div>
-
-      <div class="empty-state" id="empty-mp-cards">Nenhum cartão encontrado.</div>    <div class="status-table-wrap">
-
-    </div>      <table class="status-table">
-
-        <thead><tr><th>Código</th><th>Significado</th></tr></thead>
-
-    <div class="sub-panel" id="sub-mp-status">        <tbody id="tbl-codes"></tbody>
-
-      <div class="section-head"><span class="section-label">Status de Pagamento por Nome do Titular</span><div class="section-line"></div></div>      </table>
-
-      <div class="info-box" style="margin-bottom:16px">    </div>
-
-        Preencha o campo <strong>Nome e sobrenome</strong> do titular com o código abaixo para obter o resultado desejado.  </div>
-
-      </div>
-
-      <div class="status-table-wrap" style="overflow-x:auto"></div><!-- /wrap -->
-
-        <table class="status-table"><thead><tr><th>Status</th><th>Titular</th><th>CPF</th><th>Descrição</th></tr></thead><tbody id="tbl-mp-status"></tbody></table>
-
-      </div><div class="toast" id="toast"></div>
-
-    </div>
-
-  </div><script>
-
-/* ── Dados oficiais Yuno Testing Gateway ── */
-
-</div>
-
-const COPY_SVG = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg>';
-
-<div class="toast" id="toast"></div>
-
-const visaCards = [
-
-<script>  { num: '4507990000000002', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'SUCCEEDED' },
-
-const COPY_SVG = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg>';  { num: '4507990000000010', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INSUFFICIENT_FUNDS' },
-
-  { num: '4507990000000028', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DECLINED_BY_BANK' },
-
-/* ══ Yuno Data ══ */  { num: '4507990000000036', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DO_NOT_HONOR' },
-
-const yunoVisa = [  { num: '4507990000000044', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_SECURITY_CODE' },
-
-  { num:'4507990000000002', exp:'11/28', cvv:'123', holder:'John Doe', code:'SUCCEEDED' },  { num: '4507990000000051', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_CARD_DATA' },
-
-  { num:'4507990000000010', exp:'11/28', cvv:'123', holder:'John Doe', code:'INSUFFICIENT_FUNDS' },  { num: '4507990000000069', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'REPORTED_STOLEN' },
-
-  { num:'4507990000000028', exp:'11/28', cvv:'123', holder:'John Doe', code:'DECLINED_BY_BANK' },  { num: '4507990000000077', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'ERROR' },
-
-  { num:'4507990000000036', exp:'11/28', cvv:'123', holder:'John Doe', code:'DO_NOT_HONOR' },];
-
-  { num:'4507990000000044', exp:'11/28', cvv:'123', holder:'John Doe', code:'INVALID_SECURITY_CODE' },
-
-  { num:'4507990000000051', exp:'11/28', cvv:'123', holder:'John Doe', code:'INVALID_CARD_DATA' },const mcCards = [
-
-  { num:'4507990000000069', exp:'11/28', cvv:'123', holder:'John Doe', code:'REPORTED_STOLEN' },  { num: '5252440000000002', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'SUCCEEDED' },
-
-  { num:'4507990000000077', exp:'11/28', cvv:'123', holder:'John Doe', code:'ERROR' },  { num: '5252440000000010', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INSUFFICIENT_FUNDS' },
-
-];  { num: '5252440000000028', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DECLINED_BY_BANK' },
-
-const yunoMC = [  { num: '5252440000000036', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DO_NOT_HONOR' },
-
-  { num:'5252440000000002', exp:'11/28', cvv:'123', holder:'John Doe', code:'SUCCEEDED' },  { num: '5252440000000044', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_SECURITY_CODE' },
-
-  { num:'5252440000000010', exp:'11/28', cvv:'123', holder:'John Doe', code:'INSUFFICIENT_FUNDS' },  { num: '5252440000000051', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_CARD_DATA' },
-
-  { num:'5252440000000028', exp:'11/28', cvv:'123', holder:'John Doe', code:'DECLINED_BY_BANK' },  { num: '5252440000000069', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'REPORTED_STOLEN' },
-
-  { num:'5252440000000036', exp:'11/28', cvv:'123', holder:'John Doe', code:'DO_NOT_HONOR' },  { num: '5252440000000077', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'ERROR' },
-
-  { num:'5252440000000044', exp:'11/28', cvv:'123', holder:'John Doe', code:'INVALID_SECURITY_CODE' },];
-
-  { num:'5252440000000051', exp:'11/28', cvv:'123', holder:'John Doe', code:'INVALID_CARD_DATA' },
-
-  { num:'5252440000000069', exp:'11/28', cvv:'123', holder:'John Doe', code:'REPORTED_STOLEN' },const amexCards = [
-
-  { num:'5252440000000077', exp:'11/28', cvv:'123', holder:'John Doe', code:'ERROR' },  { num: '370000000000002', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'SUCCEEDED' },
-
-];  { num: '370000000000010', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'INSUFFICIENT_FUNDS' },
-
-const yunoAmex = [  { num: '370000000000028', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'DECLINED_BY_BANK' },
-
-  { num:'370000000000002', exp:'11/28', cvv:'1234', holder:'John Doe', code:'SUCCEEDED' },  { num: '370000000000036', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'DO_NOT_HONOR' },
-
-  { num:'370000000000010', exp:'11/28', cvv:'1234', holder:'John Doe', code:'INSUFFICIENT_FUNDS' },  { num: '370000000000044', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'INVALID_SECURITY_CODE' },
-
-  { num:'370000000000028', exp:'11/28', cvv:'1234', holder:'John Doe', code:'DECLINED_BY_BANK' },  { num: '370000000000051', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'INVALID_CARD_DATA' },
-
-  { num:'370000000000036', exp:'11/28', cvv:'1234', holder:'John Doe', code:'DO_NOT_HONOR' },  { num: '370000000000069', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'REPORTED_STOLEN' },
-
-  { num:'370000000000044', exp:'11/28', cvv:'1234', holder:'John Doe', code:'INVALID_SECURITY_CODE' },  { num: '370000000000077', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'ERROR' },
-
-  { num:'370000000000051', exp:'11/28', cvv:'1234', holder:'John Doe', code:'INVALID_CARD_DATA' },];
-
-  { num:'370000000000069', exp:'11/28', cvv:'1234', holder:'John Doe', code:'REPORTED_STOLEN' },
-
-  { num:'370000000000077', exp:'11/28', cvv:'1234', holder:'John Doe', code:'ERROR' },const threeDS = [
-
-];  { num: '5333259155643223', resp: 'AUTHENTICATED_APPLICATION_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_Y' },
-
-const threeDS = [  { num: '5306889942833340', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
-
-  { num:'5333259155643223', resp:'AUTHENTICATED_APPLICATION_FRICTIONLESS', ds:'ENROLLED_Y', acs:'TRANSACTION_STATUS_Y' },  { num: '5328720384582224', resp: 'NOT_AUTHENTICATED_APPLICATION_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
-
-  { num:'5306889942833340', resp:'BROWSER_CHALLENGE', ds:'ENROLLED_Y', acs:'TRANSACTION_CHALLENGE_OTP' },  { num: '5267648608924299', resp: 'APPLICATION_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
-
-  { num:'5328720384582224', resp:'NOT_AUTHENTICATED_APPLICATION_FRICTIONLESS', ds:'ENROLLED_Y', acs:'TRANSACTION_STATUS_N' },  { num: '5187434643593002', resp: 'APPLICATION_CHALLENGE_SDK_TRANS_ID_INVALID_FORMAT', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
-
-  { num:'5267648608924299', resp:'APPLICATION_CHALLENGE', ds:'ENROLLED_Y', acs:'TRANSACTION_STATUS_N' },  { num: '5512459816707531', resp: 'AUTHENTICATED_BROWSER_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_Y' },
-
-  { num:'5187434643593002', resp:'APPLICATION_CHALLENGE_SDK_TRANS_ID_INVALID_FORMAT', ds:'ENROLLED_Y', acs:'TRANSACTION_STATUS_N' },  { num: '5487971631330522', resp: 'NOT_AUTHENTICATED_BROWSER_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
-
-  { num:'5512459816707531', resp:'AUTHENTICATED_BROWSER_FRICTIONLESS', ds:'ENROLLED_Y', acs:'TRANSACTION_STATUS_Y' },  { num: '5424184049821670', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
-
-  { num:'5487971631330522', resp:'NOT_AUTHENTICATED_BROWSER_FRICTIONLESS', ds:'ENROLLED_Y', acs:'TRANSACTION_STATUS_N' },  { num: '5204240438720050123', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
-
-  { num:'5424184049821670', resp:'BROWSER_CHALLENGE', ds:'ENROLLED_Y', acs:'TRANSACTION_CHALLENGE_OTP' },  { num: '5250548692069390', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
-
-  { num:'5204240438720050123', resp:'BROWSER_CHALLENGE', ds:'ENROLLED_Y', acs:'TRANSACTION_CHALLENGE_OTP' },  { num: '5641523891636636', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
-
-  { num:'5250548692069390', resp:'BROWSER_CHALLENGE', ds:'ENROLLED_Y', acs:'TRANSACTION_CHALLENGE_OTP' },];
-
-  { num:'5641523891636636', resp:'BROWSER_CHALLENGE', ds:'ENROLLED_Y', acs:'TRANSACTION_CHALLENGE_OTP' },
-
-];const txCodes = [
-
-const yunoCodes = [  { code: 'SUCCEEDED', desc: 'Transação aprovada com sucesso' },
-
-  { code:'SUCCEEDED', desc:'Transação aprovada com sucesso' },  { code: 'INSUFFICIENT_FUNDS', desc: 'Saldo insuficiente no cartão' },
-
-  { code:'INSUFFICIENT_FUNDS', desc:'Saldo insuficiente no cartão' },  { code: 'DECLINED_BY_BANK', desc: 'Recusado pelo banco emissor' },
-
-  { code:'DECLINED_BY_BANK', desc:'Recusado pelo banco emissor' },  { code: 'DO_NOT_HONOR', desc: 'Banco não autorizou (genérico)' },
-
-  { code:'DO_NOT_HONOR', desc:'Banco não autorizou (genérico)' },  { code: 'INVALID_SECURITY_CODE', desc: 'Código de segurança (CVV) inválido' },
-
-  { code:'INVALID_SECURITY_CODE', desc:'Código de segurança (CVV) inválido' },  { code: 'INVALID_CARD_DATA', desc: 'Dados do cartão inválidos' },
-
-  { code:'INVALID_CARD_DATA', desc:'Dados do cartão inválidos' },  { code: 'REPORTED_STOLEN', desc: 'Cartão reportado como roubado' },
-
-  { code:'REPORTED_STOLEN', desc:'Cartão reportado como roubado' },  { code: 'ERROR', desc: 'Erro genérico de processamento' },
-
-  { code:'ERROR', desc:'Erro genérico de processamento' },];
-
-];
-
-/* ── Helpers ── */
-
-/* ══ Mercado Pago Data ══ */
-
-const mpCards = [function formatNum(n) {
-
-  { type:'Crédito', brand:'mastercard', brandLabel:'Mastercard', num:'5031433215406351', exp:'11/30', cvv:'123' },  if (n.length === 15) return n.slice(0,4)+' '+n.slice(4,10)+' '+n.slice(10);
-
-  { type:'Crédito', brand:'visa', brandLabel:'Visa', num:'4235647728025682', exp:'11/30', cvv:'123' },  if (n.length > 16) return n.slice(0,4)+' '+n.slice(4,8)+' '+n.slice(8,12)+' '+n.slice(12,16)+' '+n.slice(16);
-
-  { type:'Crédito', brand:'amex', brandLabel:'American Express', num:'375365153556885', exp:'11/30', cvv:'1234' },  return n.replace(/(.{4})/g, '$1 ').trim();
-
-  { type:'Débito', brand:'elo', brandLabel:'Elo', num:'5067766783888311', exp:'11/30', cvv:'123' },}
-
-];
-
-const mpStatuses = [function statusInfo(code) {
-
-  { status:'Pagamento aprovado', holder:'APRO', cpf:'12345678909', desc:'Aprovado com sucesso' },  if (code === 'SUCCEEDED') return { css: 'success', label: 'SUCCEEDED' };
-
-  { status:'Recusado por erro geral', holder:'OTHE', cpf:'12345678909', desc:'Erro genérico de recusa' },  return { css: 'error', label: code };
-
-  { status:'Pagamento pendente', holder:'CONT', cpf:'—', desc:'Aguardando confirmação' },}
-
-  { status:'Recusado com validação', holder:'CALL', cpf:'—', desc:'Requer contato com o banco' },
-
-  { status:'Saldo insuficiente', holder:'FUND', cpf:'—', desc:'Quantia insuficiente' },function brandIcon(brand) {
-
-  { status:'CVV inválido', holder:'SECU', cpf:'—', desc:'Código de segurança incorreto' },  if (brand === 'visa') return '<div class="brand-icon visa">VISA</div>';
-
-  { status:'Problema com vencimento', holder:'EXPI', cpf:'—', desc:'Data expirada ou inválida' },  if (brand === 'mc') return '<div class="brand-icon mastercard"></div>';
-
-  { status:'Erro no formulário', holder:'FORM', cpf:'—', desc:'Dados do formulário inválidos' },  if (brand === 'amex') return '<div class="brand-icon amex">AMEX</div>';
-
-  { status:'Número ausente', holder:'CARD', cpf:'—', desc:'Número do cartão ausente' },  return '';
-
-  { status:'Parcelas inválidas', holder:'INST', cpf:'—', desc:'Número de parcelas inválido' },}
-
-  { status:'Pagamento duplicado', holder:'DUPL', cpf:'—', desc:'Transação duplicada detectada' },function brandLabel(brand) {
-
-  { status:'Cartão desabilitado', holder:'LOCK', cpf:'—', desc:'Cartão bloqueado' },  if (brand === 'visa') return 'Visa';
-
-  { status:'Tipo não permitido', holder:'CTNA', cpf:'—', desc:'Bandeira não aceita' },  if (brand === 'mc') return 'Mastercard';
-
-  { status:'PIN excedido', holder:'ATTE', cpf:'—', desc:'Tentativas de PIN excedidas' },  if (brand === 'amex') return 'American Express';
-
-  { status:'Lista negra', holder:'BLAC', cpf:'—', desc:'Cartão em lista de bloqueio' },  return '';
-
-  { status:'Não suportado', holder:'UNSU', cpf:'—', desc:'Operação não suportada' },}
-
-  { status:'Regra de valores', holder:'TEST', cpf:'—', desc:'Usado para testar regras por valor' },
-
-];function copyBtn(text) {
-
-  return `<button class="copy-btn" onclick="copy(this,'${text}')">${COPY_SVG}</button>`;
-
-/* ══ Helpers ══ */}
-
-function fmtNum(n) {
-
-  if (n.length === 15) return n.slice(0,4)+' '+n.slice(4,10)+' '+n.slice(10);function buildCard(c, brand) {
-
-  if (n.length > 16) return n.slice(0,4)+' '+n.slice(4,8)+' '+n.slice(8,12)+' '+n.slice(12,16)+' '+n.slice(16);  const si = statusInfo(c.code);
-
-  return n.replace(/(.{4})/g,'$1 ').trim();  const search = `${brandLabel(brand)} ${c.num} ${c.code} ${c.holder}`.toLowerCase();
-
-}  return `
-
-function statusCSS(code) {    <div class="card" data-status="${si.css}" data-search="${search}">
-
-  if (code === 'SUCCEEDED') return 'success';      <div class="card-header">
-
-  return 'error';        <div class="card-brand">${brandIcon(brand)}<div class="brand-name">${brandLabel(brand)} · ${c.code === 'SUCCEEDED' ? 'Aprovado' : c.code.replace(/_/g,' ')}</div></div>
-
-}        <span class="status-badge ${si.css}">${si.label}</span>
-
-function brandHTML(b) {      </div>
-
-  const m = { visa:'<div class="brand-icon visa">VISA</div>', mastercard:'<div class="brand-icon mastercard"></div>', amex:'<div class="brand-icon amex">AMEX</div>', elo:'<div class="brand-icon elo">ELO</div>' };      <div class="card-body">
-
-  return m[b] || '';        <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">${formatNum(c.num)}</span>${copyBtn(c.num)}</div></div>
-
-}        <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">${c.cvv}</span>${copyBtn(c.cvv)}</div></div>
-
-function cBtn(t) { return `<button class="copy-btn" onclick="copy(this,'${t}')">${COPY_SVG}</button>`; }        <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">${c.exp}</span>${copyBtn(c.exp)}</div></div>
-
-function row(l, v, r) { r=r||v; return `<div class="field-row"><span class="field-label">${l}</span><div class="field-value-wrap"><span class="field-value${l==='Número'?' number':''}">${v}</span>${cBtn(r)}</div></div>`; }        <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">${c.holder}</span>${copyBtn(c.holder)}</div></div>
-
-      </div>
-
-function yunoCard(c, brand, brandLabel) {    </div>`;
-
-  const css = statusCSS(c.code);}
-
-  const lbl = c.code === 'SUCCEEDED' ? 'Aprovado' : c.code.replace(/_/g,' ');
-
-  const s = `${brandLabel} ${c.num} ${c.code} ${lbl}`.toLowerCase();/* ── Render ── */
-
-  return `<div class="card" data-status="${css}" data-search="${s}">document.getElementById('grid-visa').innerHTML = visaCards.map(c => buildCard(c, 'visa')).join('');
-
-    <div class="card-header"><div class="card-brand">${brandHTML(brand)}<div class="brand-name">${brandLabel} · ${lbl}</div></div><span class="status-badge ${css}">${c.code}</span></div>document.getElementById('grid-mc').innerHTML   = mcCards.map(c => buildCard(c, 'mc')).join('');
-
-    <div class="card-body">${row('Número',fmtNum(c.num),c.num)}${row('CVV',c.cvv)}${row('Vencimento',c.exp)}${row('Titular',c.holder)}</div></div>`;document.getElementById('grid-amex').innerHTML  = amexCards.map(c => buildCard(c, 'amex')).join('');
-
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cartões de Teste · Yuno & Mercado Pago</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--tr:background .22s ease,color .22s ease,border-color .22s ease,box-shadow .22s ease}
+[data-theme="dark"]{
+  --bg:#0d0e11;--bg2:#111318;--sf:#181b21;--sf2:#1f2229;--sf3:#262b35;
+  --bd:#2a2f3a;--bd2:#363d4a;
+  --tx:#eef0f4;--tx2:#8b92a5;--tx3:#545d72;
+  --ac:#5b8af5;--ac-s:rgba(91,138,245,.12);--ac-g:rgba(91,138,245,.25);
+  --gn:#34d671;--gn-s:rgba(52,214,113,.12);
+  --rd:#f25858;--rd-s:rgba(242,88,88,.12);
+  --yw:#f5a623;--yw-s:rgba(245,166,35,.12);
+  --bl:#5b8af5;--bl-s:rgba(91,138,245,.12);
+  --sh:0 1px 3px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
+  --sh-l:0 4px 32px rgba(0,0,0,.5),0 1px 4px rgba(0,0,0,.4);
+  --sh-c:0 0 0 1px rgba(255,255,255,.04),0 2px 8px rgba(0,0,0,.4);
+  --hero:linear-gradient(135deg,rgba(91,138,245,.08)0%,rgba(167,139,250,.06)50%,rgba(52,214,113,.04)100%)
 }
-
-function mpCardHTML(c) {// 3DS table
-
-  const s = `${c.brandLabel} ${c.type} ${c.num}`.toLowerCase();document.getElementById('tbl-3ds').innerHTML = threeDS.map(r =>
-
-  return `<div class="card" data-status="info" data-search="${s}">  `<tr>
-
-    <div class="card-header"><div class="card-brand">${brandHTML(c.brand)}<div class="brand-name">${c.brandLabel}</div></div><span class="status-badge info">${c.type}</span></div>    <td><span class="code-chip" onclick="copy(this,'${r.num}')">${formatNum(r.num)}</span></td>
-
-    <div class="card-body">${row('Número',fmtNum(c.num),c.num)}${row('CVV',c.cvv)}${row('Vencimento',c.exp)}</div></div>`;    <td style="font-size:11.5px">${r.resp}</td>
-
-}    <td>${r.ds}</td>
-
-    <td>${r.acs}</td>
-
-/* ══ Render ══ */  </tr>`
-
-document.getElementById('grid-yuno-visa').innerHTML = yunoVisa.map(c=>yunoCard(c,'visa','Visa')).join('');).join('');
-
-document.getElementById('grid-yuno-mc').innerHTML = yunoMC.map(c=>yunoCard(c,'mastercard','Mastercard')).join('');
-
-document.getElementById('grid-yuno-amex').innerHTML = yunoAmex.map(c=>yunoCard(c,'amex','American Express')).join('');// Codes table
-
-document.getElementById('grid-mp-cards').innerHTML = mpCards.map(c=>mpCardHTML(c)).join('');document.getElementById('tbl-codes').innerHTML = txCodes.map(r =>
-
-  `<tr><td><span class="code-chip" onclick="copy(this,'${r.code}')">${r.code}</span></td><td>${r.desc}</td></tr>`
-
-document.getElementById('tbl-3ds').innerHTML = threeDS.map(r=>).join('');
-
-  `<tr><td><span class="code-chip" onclick="copy(this,'${r.num}')">${fmtNum(r.num)}</span></td><td style="font-size:11px">${r.resp}</td><td>${r.ds}</td><td>${r.acs}</td></tr>`
-
-).join('');/* ── UI ── */
-
-function showTab(name, btn) {
-
-document.getElementById('tbl-yuno-codes').innerHTML = yunoCodes.map(r=>  document.querySelectorAll('.section-panel').forEach(p => p.classList.add('hidden'));
-
-  `<tr><td><span class="code-chip" onclick="copy(this,'${r.code}')">${r.code}</span></td><td>${r.desc}</td></tr>`  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-
-).join('');  document.getElementById('tab-' + name).classList.remove('hidden');
-
+[data-theme="light"]{
+  --bg:#f5f5f2;--bg2:#efefe9;--sf:#fff;--sf2:#f2f2ef;--sf3:#eaeae5;
+  --bd:#e0e0d8;--bd2:#c8c8bf;
+  --tx:#111110;--tx2:#6b6b63;--tx3:#9d9d93;
+  --ac:#2b5ce6;--ac-s:rgba(43,92,230,.1);--ac-g:rgba(43,92,230,.18);
+  --gn:#16a34a;--gn-s:rgba(22,163,74,.1);
+  --rd:#dc2626;--rd-s:rgba(220,38,38,.1);
+  --yw:#d97706;--yw-s:rgba(217,119,6,.1);
+  --bl:#2563eb;--bl-s:rgba(37,99,235,.1);
+  --sh:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.04);
+  --sh-l:0 4px 24px rgba(0,0,0,.1),0 1px 4px rgba(0,0,0,.06);
+  --sh-c:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+  --hero:linear-gradient(135deg,rgba(43,92,230,.06)0%,rgba(124,58,237,.04)50%,rgba(22,163,74,.03)100%)
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;transition:var(--tr)}
+.hero{background:var(--hero);border-bottom:1px solid var(--bd);padding:32px 20px 28px}
+.hero-in{max-width:1060px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.hero-l{display:flex;flex-direction:column;gap:10px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:6px;white-space:nowrap}
+.badge-sb{background:var(--gn-s);color:var(--gn);border:1px solid rgba(52,214,113,.2)}
+.badge-sb .dot{width:6px;height:6px;border-radius:50%;background:var(--gn);box-shadow:0 0 6px var(--gn);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.badge-yu{background:var(--ac-s);color:var(--ac);border:1px solid rgba(91,138,245,.2)}
+.badge-mp{background:var(--bl-s);color:var(--bl);border:1px solid rgba(91,138,245,.2)}
+.hero h1{font-size:26px;font-weight:700;letter-spacing:-.04em;line-height:1.1}
+.hero p{font-size:14px;color:var(--tx2);max-width:560px;line-height:1.55;margin-top:2px}
+.hero-r{display:flex;align-items:center;gap:10px;padding-top:6px}
+.tbtn{width:36px;height:36px;border-radius:9px;border:1px solid var(--bd);background:var(--sf2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--tx2);transition:all .18s;flex-shrink:0}
+.tbtn:hover{background:var(--sf3);color:var(--tx)}
+.tbtn svg{width:16px;height:16px}
+.i-sun{display:none}.i-moon{display:block}
+[data-theme="light"] .i-sun{display:block}
+[data-theme="light"] .i-moon{display:none}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px 80px}
+.pbar{display:flex;align-items:center;gap:0;border-bottom:2px solid var(--bd);margin-top:24px;margin-bottom:24px;overflow-x:auto}
+.ptab{padding:10px 20px;border:none;background:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--tx3);cursor:pointer;position:relative;white-space:nowrap;transition:color .15s}
+.ptab:hover{color:var(--tx2)}
+.ptab.active{color:var(--ac)}
+.ptab.active::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--ac);border-radius:2px}
+.stabs{display:flex;gap:4px;background:var(--sf2);border:1px solid var(--bd);border-radius:10px;padding:3px;margin-bottom:20px;width:fit-content}
+.stab{padding:5px 14px;border-radius:7px;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:500;color:var(--tx2);cursor:pointer;transition:all .18s;white-space:nowrap}
+.stab.active{background:var(--sf3);color:var(--tx);box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.stab:hover:not(.active){color:var(--tx)}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:14px;margin-top:28px}
+.sh:first-child{margin-top:0}
+.sl{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);white-space:nowrap;font-family:'IBM Plex Mono',monospace}
+.sline{flex:1;height:1px;background:var(--bd)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(296px,1fr));gap:10px;margin-bottom:6px}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh-c);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s,outline-color .25s;position:relative;outline:2.5px solid transparent;outline-offset:-2px}
+.card:hover{transform:translateY(-1px);box-shadow:var(--sh-l);border-color:var(--bd2)}
+.card[data-status="success"]{border-left:3px solid var(--gn)}
+.card[data-status="error"]{border-left:3px solid var(--rd)}
+.card[data-status="pending"]{border-left:3px solid var(--yw)}
+.card[data-status="info"]{border-left:3px solid var(--bl)}
+.card.copying{outline-color:var(--ac);box-shadow:0 0 0 4px var(--ac-g),var(--sh-l);transform:scale(1.012);z-index:10}
+.card.copying .chd{background:var(--ac-s)}
+.chd{display:flex;align-items:center;justify-content:space-between;padding:12px 14px 10px;border-bottom:1px solid var(--bd);gap:8px;transition:background .2s}
+.cbr{display:flex;align-items:center;gap:9px;min-width:0}
+.bi{width:38px;height:25px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;letter-spacing:.04em;flex-shrink:0;font-family:'IBM Plex Mono',monospace}
+.bi.visa{background:linear-gradient(135deg,#1a1f71,#2a35a8);color:#fff;font-size:10px;letter-spacing:.06em}
+.bi.mc{background:linear-gradient(135deg,#1a1a1a,#333);position:relative;overflow:hidden}
+.bi.mc::before,.bi.mc::after{content:'';position:absolute;width:18px;height:18px;border-radius:50%}
+.bi.mc::before{background:#eb001b;left:3px}
+.bi.mc::after{background:#f79e1b;right:3px;opacity:.85}
+.bi.amex{background:linear-gradient(135deg,#006fcf,#009ddc);color:#fff;font-size:8px}
+.bi.elo{background:linear-gradient(135deg,#111,#333);color:#FFD700;font-size:9px}
+.bn{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:-.01em}
+.sb{font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px;letter-spacing:.04em;white-space:nowrap;font-family:'IBM Plex Mono',monospace;flex-shrink:0}
+.sb.success{background:var(--gn-s);color:var(--gn);border:1px solid rgba(52,214,113,.2)}
+.sb.error{background:var(--rd-s);color:var(--rd);border:1px solid rgba(242,88,88,.2)}
+.sb.pending{background:var(--yw-s);color:var(--yw);border:1px solid rgba(245,166,35,.2)}
+.sb.info{background:var(--bl-s);color:var(--bl);border:1px solid rgba(91,138,245,.2)}
+.cbd{padding:10px 14px 12px}
+.fr{display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--bd);gap:8px}
+.fr:last-child{border-bottom:none;padding-bottom:0}
+.fl{font-size:10.5px;color:var(--tx3);font-weight:500;letter-spacing:.04em;min-width:82px;flex-shrink:0;font-family:'IBM Plex Mono',monospace}
+.fvw{display:flex;align-items:center;gap:7px;min-width:0}
+.fv{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;color:var(--tx);letter-spacing:.04em;white-space:nowrap}
+.fv.num{font-size:12px;letter-spacing:.07em}
+.cpb{width:24px;height:24px;border-radius:6px;border:1px solid var(--bd);background:var(--sf2);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--tx3);transition:all .15s;flex-shrink:0}
+.cpb:hover{background:var(--ac-s);border-color:var(--ac);color:var(--ac);box-shadow:0 0 8px var(--ac-g)}
+.cpb.copied{background:var(--gn-s);border-color:var(--gn);color:var(--gn)}
+.cpb svg{width:12px;height:12px;pointer-events:none}
+.tw{background:var(--sf);border:1px solid var(--bd);border-radius:14px;box-shadow:var(--sh-c);overflow:hidden}
+.st{width:100%;border-collapse:collapse}
+.st th{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);background:var(--sf2);padding:10px 16px;text-align:left;border-bottom:1px solid var(--bd);font-family:'IBM Plex Mono',monospace}
+.st td{padding:10px 16px;border-bottom:1px solid var(--bd);font-size:13px;transition:background .12s}
+.st tr:last-child td{border-bottom:none}
+.st tr:hover td{background:var(--sf2)}
+.cc{font-family:'IBM Plex Mono',monospace;font-size:11.5px;font-weight:600;background:var(--ac-s);border:1px solid rgba(91,138,245,.18);padding:2px 8px;border-radius:5px;color:var(--ac);white-space:nowrap;cursor:pointer;transition:all .15s;display:inline-block}
+.cc:hover{background:var(--ac);color:#fff;border-color:var(--ac)}
+.panel{display:none}.panel.active{display:block}
+.spanel{display:none}.spanel.active{display:block}
+.sbar{position:relative;margin-bottom:20px}
+.sbar input{width:100%;background:var(--sf);border:1px solid var(--bd);border-radius:10px;padding:9px 14px 9px 38px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--tx);outline:none;transition:border-color .15s,box-shadow .15s}
+.sbar input::placeholder{color:var(--tx3)}
+.sbar input:focus{border-color:var(--ac);box-shadow:0 0 0 3px var(--ac-g)}
+.si{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--tx3);pointer-events:none}
+.si svg{width:15px;height:15px;display:block}
+.ib{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:16px 18px;margin-bottom:20px;font-size:13px;line-height:1.6;color:var(--tx2)}
+.ib strong{color:var(--tx)}
+.ib code{font-family:'IBM Plex Mono',monospace;font-size:12px;background:var(--sf2);padding:1px 6px;border-radius:4px;color:var(--ac);border:1px solid var(--bd)}
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--sf3);border:1px solid var(--bd2);color:var(--tx);font-size:12.5px;font-weight:500;padding:9px 18px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.3);transition:transform .28s cubic-bezier(.34,1.56,.64,1),opacity .2s;opacity:0;pointer-events:none;z-index:999;white-space:nowrap;font-family:'IBM Plex Mono',monospace;display:flex;align-items:center;gap:8px}
+.toast::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gn);flex-shrink:0}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.empty{text-align:center;padding:40px 20px;color:var(--tx3);font-size:13px;display:none}
+.empty.vis{display:block}
+@media(max-width:700px){
+  .hero-in{flex-direction:column}
+  .hero h1{font-size:22px}
+  .grid{grid-template-columns:1fr}
+  .ptab{padding:8px 14px;font-size:13px}
+  .st{font-size:12px}
+  .st th,.st td{padding:8px 10px}
+}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:3px}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-in">
+    <div class="hero-l">
+      <div class="badges">
+        <span class="badge badge-sb"><span class="dot"></span>SANDBOX</span>
+        <span class="badge badge-yu">YUNO</span>
+        <span class="badge badge-mp">MERCADO PAGO</span>
+      </div>
+      <h1>Cartões de Teste</h1>
+      <p>Cartões para validar integrações em sandbox. Clique em qualquer valor para copiar — o cartão fica destacado para você não se perder.</p>
+    </div>
+    <div class="hero-r">
+      <button class="tbtn" onclick="toggleTheme()" title="Alternar tema">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="pbar">
+    <button class="ptab active" onclick="showProv('yuno',this)">Yuno</button>
+    <button class="ptab" onclick="showProv('mp',this)">Mercado Pago</button>
+  </div>
+  <div class="panel active" id="p-yuno">
+    <div class="stabs">
+      <button class="stab active" onclick="showSub('y-visa',this)">Visa</button>
+      <button class="stab" onclick="showSub('y-mc',this)">Mastercard</button>
+      <button class="stab" onclick="showSub('y-amex',this)">Amex</button>
+      <button class="stab" onclick="showSub('y-3ds',this)">3DS</button>
+      <button class="stab" onclick="showSub('y-codes',this)">Códigos</button>
+    </div>
+    <div class="spanel active" id="s-y-visa">
+      <div class="sbar"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this)"></div>
+      <div class="sh"><span class="sl">Visa · Yuno Testing Gateway</span><div class="sline"></div></div>
+      <div class="grid" id="g-y-visa"></div>
+      <div class="empty" id="e-y-visa">Nenhum cartão encontrado.</div>
+    </div>
+    <div class="spanel" id="s-y-mc">
+      <div class="sbar"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this)"></div>
+      <div class="sh"><span class="sl">Mastercard · Yuno Testing Gateway</span><div class="sline"></div></div>
+      <div class="grid" id="g-y-mc"></div>
+      <div class="empty" id="e-y-mc">Nenhum cartão encontrado.</div>
+    </div>
+    <div class="spanel" id="s-y-amex">
+      <div class="sbar"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this)"></div>
+      <div class="sh"><span class="sl">American Express · Yuno Testing Gateway</span><div class="sline"></div></div>
+      <div class="grid" id="g-y-amex"></div>
+      <div class="empty" id="e-y-amex">Nenhum cartão encontrado.</div>
+    </div>
+    <div class="spanel" id="s-y-3ds">
+      <div class="sh"><span class="sl">3DS · Mastercard Test Cards (Netcetera NDM)</span><div class="sline"></div></div>
+      <div class="tw" style="overflow-x:auto">
+        <table class="st"><thead><tr><th>Número</th><th>3DS 2.x</th><th>3DS 1.x DS</th><th>3DS 1.x ACS</th></tr></thead><tbody id="t-3ds"></tbody></table>
+      </div>
+    </div>
+    <div class="spanel" id="s-y-codes">
+      <div class="sh"><span class="sl">Yuno · Transaction Response Codes</span><div class="sline"></div></div>
+      <div class="tw">
+        <table class="st"><thead><tr><th>Código</th><th>Significado</th></tr></thead><tbody id="t-codes"></tbody></table>
+      </div>
+    </div>
+  </div>
+  <div class="panel" id="p-mp">
+    <div class="ib">
+      O Mercado Pago fornece <strong>cartões de teste</strong> que permitem testar pagamentos sem usar um cartão real.
+      Combine os dados do cartão com o <strong>nome do titular</strong> (ex: <code>APRO</code>, <code>OTHE</code>) para simular diferentes cenários.
+      Veja a aba <strong>"Status por Titular"</strong> para a lista completa.
+    </div>
+    <div class="stabs">
+      <button class="stab active" onclick="showSub('m-cards',this)">Cartões</button>
+      <button class="stab" onclick="showSub('m-status',this)">Status por Titular</button>
+    </div>
+    <div class="spanel active" id="s-m-cards">
+      <div class="sbar"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span><input type="text" placeholder="Buscar bandeira ou tipo..." oninput="filterCards(this)"></div>
+      <div class="sh"><span class="sl">Cartões de Crédito &amp; Débito · Mercado Pago</span><div class="sline"></div></div>
+      <div class="grid" id="g-m-cards"></div>
+      <div class="empty" id="e-m-cards">Nenhum cartão encontrado.</div>
+    </div>
+    <div class="spanel" id="s-m-status">
+      <div class="sh"><span class="sl">Status de Pagamento por Nome do Titular</span><div class="sline"></div></div>
+      <div class="ib" style="margin-bottom:16px">Preencha o campo <strong>Nome e sobrenome</strong> do titular com o código abaixo para obter o resultado desejado.</div>
+      <div class="tw" style="overflow-x:auto">
+        <table class="st"><thead><tr><th>Status</th><th>Titular</th><th>CPF</th><th>Descrição</th></tr></thead><tbody id="t-mp-st"></tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+var COPY='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg>';
+var CHECK='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3.5 8.5L6.5 11.5 12.5 4.5"/></svg>';
+var yVisa=[
+  {n:'4507990000000002',e:'11/28',c:'123',h:'John Doe',code:'SUCCEEDED'},
+  {n:'4507990000000010',e:'11/28',c:'123',h:'John Doe',code:'INSUFFICIENT_FUNDS'},
+  {n:'4507990000000028',e:'11/28',c:'123',h:'John Doe',code:'DECLINED_BY_BANK'},
+  {n:'4507990000000036',e:'11/28',c:'123',h:'John Doe',code:'DO_NOT_HONOR'},
+  {n:'4507990000000044',e:'11/28',c:'123',h:'John Doe',code:'INVALID_SECURITY_CODE'},
+  {n:'4507990000000051',e:'11/28',c:'123',h:'John Doe',code:'INVALID_CARD_DATA'},
+  {n:'4507990000000069',e:'11/28',c:'123',h:'John Doe',code:'REPORTED_STOLEN'},
+  {n:'4507990000000077',e:'11/28',c:'123',h:'John Doe',code:'ERROR'}
+];
+var yMC=[
+  {n:'5252440000000002',e:'11/28',c:'123',h:'John Doe',code:'SUCCEEDED'},
+  {n:'5252440000000010',e:'11/28',c:'123',h:'John Doe',code:'INSUFFICIENT_FUNDS'},
+  {n:'5252440000000028',e:'11/28',c:'123',h:'John Doe',code:'DECLINED_BY_BANK'},
+  {n:'5252440000000036',e:'11/28',c:'123',h:'John Doe',code:'DO_NOT_HONOR'},
+  {n:'5252440000000044',e:'11/28',c:'123',h:'John Doe',code:'INVALID_SECURITY_CODE'},
+  {n:'5252440000000051',e:'11/28',c:'123',h:'John Doe',code:'INVALID_CARD_DATA'},
+  {n:'5252440000000069',e:'11/28',c:'123',h:'John Doe',code:'REPORTED_STOLEN'},
+  {n:'5252440000000077',e:'11/28',c:'123',h:'John Doe',code:'ERROR'}
+];
+var yAmex=[
+  {n:'370000000000002',e:'11/28',c:'1234',h:'John Doe',code:'SUCCEEDED'},
+  {n:'370000000000010',e:'11/28',c:'1234',h:'John Doe',code:'INSUFFICIENT_FUNDS'},
+  {n:'370000000000028',e:'11/28',c:'1234',h:'John Doe',code:'DECLINED_BY_BANK'},
+  {n:'370000000000036',e:'11/28',c:'1234',h:'John Doe',code:'DO_NOT_HONOR'},
+  {n:'370000000000044',e:'11/28',c:'1234',h:'John Doe',code:'INVALID_SECURITY_CODE'},
+  {n:'370000000000051',e:'11/28',c:'1234',h:'John Doe',code:'INVALID_CARD_DATA'},
+  {n:'370000000000069',e:'11/28',c:'1234',h:'John Doe',code:'REPORTED_STOLEN'},
+  {n:'370000000000077',e:'11/28',c:'1234',h:'John Doe',code:'ERROR'}
+];
+var y3ds=[
+  {n:'5333259155643223',r:'AUTHENTICATED_APPLICATION_FRICTIONLESS',d:'ENROLLED_Y',a:'TRANSACTION_STATUS_Y'},
+  {n:'5306889942833340',r:'BROWSER_CHALLENGE',d:'ENROLLED_Y',a:'TRANSACTION_CHALLENGE_OTP'},
+  {n:'5328720384582224',r:'NOT_AUTHENTICATED_APPLICATION_FRICTIONLESS',d:'ENROLLED_Y',a:'TRANSACTION_STATUS_N'},
+  {n:'5267648608924299',r:'APPLICATION_CHALLENGE',d:'ENROLLED_Y',a:'TRANSACTION_STATUS_N'},
+  {n:'5187434643593002',r:'APPLICATION_CHALLENGE_SDK_TRANS_ID_INVALID_FORMAT',d:'ENROLLED_Y',a:'TRANSACTION_STATUS_N'},
+  {n:'5512459816707531',r:'AUTHENTICATED_BROWSER_FRICTIONLESS',d:'ENROLLED_Y',a:'TRANSACTION_STATUS_Y'},
+  {n:'5487971631330522',r:'NOT_AUTHENTICATED_BROWSER_FRICTIONLESS',d:'ENROLLED_Y',a:'TRANSACTION_STATUS_N'},
+  {n:'5424184049821670',r:'BROWSER_CHALLENGE',d:'ENROLLED_Y',a:'TRANSACTION_CHALLENGE_OTP'},
+  {n:'5204240438720050123',r:'BROWSER_CHALLENGE',d:'ENROLLED_Y',a:'TRANSACTION_CHALLENGE_OTP'},
+  {n:'5250548692069390',r:'BROWSER_CHALLENGE',d:'ENROLLED_Y',a:'TRANSACTION_CHALLENGE_OTP'},
+  {n:'5641523891636636',r:'BROWSER_CHALLENGE',d:'ENROLLED_Y',a:'TRANSACTION_CHALLENGE_OTP'}
+];
+var yCodes=[
+  {code:'SUCCEEDED',d:'Transação aprovada com sucesso'},
+  {code:'INSUFFICIENT_FUNDS',d:'Saldo insuficiente no cartão'},
+  {code:'DECLINED_BY_BANK',d:'Recusado pelo banco emissor'},
+  {code:'DO_NOT_HONOR',d:'Banco não autorizou (genérico)'},
+  {code:'INVALID_SECURITY_CODE',d:'Código de segurança (CVV) inválido'},
+  {code:'INVALID_CARD_DATA',d:'Dados do cartão inválidos'},
+  {code:'REPORTED_STOLEN',d:'Cartão reportado como roubado'},
+  {code:'ERROR',d:'Erro genérico de processamento'}
+];
+var mpCards=[
+  {type:'Crédito',b:'mc',bl:'Mastercard',n:'5031433215406351',e:'11/30',c:'123'},
+  {type:'Crédito',b:'visa',bl:'Visa',n:'4235647728025682',e:'11/30',c:'123'},
+  {type:'Crédito',b:'amex',bl:'American Express',n:'375365153556885',e:'11/30',c:'1234'},
+  {type:'Débito',b:'elo',bl:'Elo',n:'5067766783888311',e:'11/30',c:'123'}
+];
+var mpSt=[
+  {s:'Pagamento aprovado',h:'APRO',cpf:'12345678909',d:'Aprovado com sucesso'},
+  {s:'Recusado por erro geral',h:'OTHE',cpf:'12345678909',d:'Erro genérico de recusa'},
+  {s:'Pagamento pendente',h:'CONT',cpf:'',d:'Aguardando confirmação'},
+  {s:'Recusado com validação',h:'CALL',cpf:'',d:'Requer contato com o banco'},
+  {s:'Saldo insuficiente',h:'FUND',cpf:'',d:'Quantia insuficiente'},
+  {s:'CVV inválido',h:'SECU',cpf:'',d:'Código de segurança incorreto'},
+  {s:'Problema com vencimento',h:'EXPI',cpf:'',d:'Data expirada ou inválida'},
+  {s:'Erro no formulário',h:'FORM',cpf:'',d:'Dados do formulário inválidos'},
+  {s:'Número ausente',h:'CARD',cpf:'',d:'Número do cartão ausente'},
+  {s:'Parcelas inválidas',h:'INST',cpf:'',d:'Número de parcelas inválido'},
+  {s:'Pagamento duplicado',h:'DUPL',cpf:'',d:'Transação duplicada detectada'},
+  {s:'Cartão desabilitado',h:'LOCK',cpf:'',d:'Cartão bloqueado'},
+  {s:'Tipo não permitido',h:'CTNA',cpf:'',d:'Bandeira não aceita'},
+  {s:'PIN excedido',h:'ATTE',cpf:'',d:'Tentativas de PIN excedidas'},
+  {s:'Lista negra',h:'BLAC',cpf:'',d:'Cartão em lista de bloqueio'},
+  {s:'Não suportado',h:'UNSU',cpf:'',d:'Operação não suportada'},
+  {s:'Regra de valores',h:'TEST',cpf:'',d:'Usado para testar regras por valor'}
+];
+function fmt(n){
+  if(n.length===15)return n.slice(0,4)+' '+n.slice(4,10)+' '+n.slice(10);
+  if(n.length>16)return n.slice(0,4)+' '+n.slice(4,8)+' '+n.slice(8,12)+' '+n.slice(12,16)+' '+n.slice(16);
+  return n.replace(/(.{4})/g,'$1 ').trim();
+}
+function sCss(c){return c==='SUCCEEDED'?'success':'error'}
+function bHTML(b){
+  var m={visa:'<div class="bi visa">VISA</div>',mc:'<div class="bi mc"></div>',amex:'<div class="bi amex">AMEX</div>',elo:'<div class="bi elo">ELO</div>'};
+  return m[b]||'';
+}
+function cBtn(t){return '<button class="cpb" onclick="doCopy(this,\''+t.replace(/'/g,"\\'")+'\')">'+COPY+'</button>'}
+function row(l,v,r){r=r||v;return '<div class="fr"><span class="fl">'+l+'</span><div class="fvw"><span class="fv'+(l==='Número'?' num':'')+'">'+v+'</span>'+cBtn(r)+'</div></div>'}
+function yCard(c,brand,brandL){
+  var css=sCss(c.code);
+  var lbl=c.code==='SUCCEEDED'?'Aprovado':c.code.replace(/_/g,' ');
+  var s=(brandL+' '+c.n+' '+c.code+' '+lbl).toLowerCase();
+  return '<div class="card" data-status="'+css+'" data-search="'+s+'">'
+    +'<div class="chd"><div class="cbr">'+bHTML(brand)+'<div class="bn">'+brandL+' · '+lbl+'</div></div><span class="sb '+css+'">'+c.code+'</span></div>'
+    +'<div class="cbd">'+row('Número',fmt(c.n),c.n)+row('CVV',c.c)+row('Vencimento',c.e)+row('Titular',c.h)+'</div></div>';
+}
+function mpCard(c){
+  var s=(c.bl+' '+c.type+' '+c.n).toLowerCase();
+  return '<div class="card" data-status="info" data-search="'+s+'">'
+    +'<div class="chd"><div class="cbr">'+bHTML(c.b)+'<div class="bn">'+c.bl+'</div></div><span class="sb info">'+c.type+'</span></div>'
+    +'<div class="cbd">'+row('Número',fmt(c.n),c.n)+row('CVV',c.c)+row('Vencimento',c.e)+'</div></div>';
+}
+document.getElementById('g-y-visa').innerHTML=yVisa.map(function(c){return yCard(c,'visa','Visa')}).join('');
+document.getElementById('g-y-mc').innerHTML=yMC.map(function(c){return yCard(c,'mc','Mastercard')}).join('');
+document.getElementById('g-y-amex').innerHTML=yAmex.map(function(c){return yCard(c,'amex','American Express')}).join('');
+document.getElementById('g-m-cards').innerHTML=mpCards.map(function(c){return mpCard(c)}).join('');
+document.getElementById('t-3ds').innerHTML=y3ds.map(function(r){
+  return '<tr><td><span class="cc" onclick="doCopy(this,\''+r.n+'\')">'+fmt(r.n)+'</span></td><td style="font-size:11px">'+r.r+'</td><td>'+r.d+'</td><td>'+r.a+'</td></tr>';
+}).join('');
+document.getElementById('t-codes').innerHTML=yCodes.map(function(r){
+  return '<tr><td><span class="cc" onclick="doCopy(this,\''+r.code+'\')">'+r.code+'</span></td><td>'+r.d+'</td></tr>';
+}).join('');
+document.getElementById('t-mp-st').innerHTML=mpSt.map(function(r){
+  var cpfCell=r.cpf?'<span class="cc" onclick="doCopy(this,\''+r.cpf+'\')">'+r.cpf+'</span>':'<span style="color:var(--tx3)">—</span>';
+  return '<tr><td style="font-weight:500">'+r.s+'</td><td><span class="cc" onclick="doCopy(this,\''+r.h+'\')">'+r.h+'</span></td><td>'+cpfCell+'</td><td style="color:var(--tx2)">'+r.d+'</td></tr>';
+}).join('');
+function showProv(name,btn){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.ptab').forEach(function(b){b.classList.remove('active')});
+  document.getElementById('p-'+name).classList.add('active');
   btn.classList.add('active');
-
-document.getElementById('tbl-mp-status').innerHTML = mpStatuses.map(r=>}
-
-  `<tr><td style="font-weight:500">${r.status}</td><td><span class="code-chip" onclick="copy(this,'${r.holder}')">${r.holder}</span></td><td>${r.cpf!=='—'?'<span class="code-chip" onclick="copy(this,\''+r.cpf+'\')">'+r.cpf+'</span>':'<span style="color:var(--text3)">—</span>'}</td><td style="color:var(--text2)">${r.desc}</td></tr>`
-
-).join('');function filterCards(query, panelId) {
-
-  const q = query.toLowerCase().trim();
-
-/* ══ UI ══ */  const panel = document.getElementById(panelId);
-
-function showProvider(name, btn) {  const cards = panel.querySelectorAll('.card');
-
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));  let visible = 0;
-
-  document.querySelectorAll('.prov-tab').forEach(b=>b.classList.remove('active'));  cards.forEach(card => {
-
-  document.getElementById('panel-'+name).classList.add('active');    const show = !q || (card.dataset.search || '').includes(q);
-
-  btn.classList.add('active');    card.style.display = show ? '' : 'none';
-
-}    if (show) visible++;
-
-function showSub(id, btn) {  });
-
-  const panel = btn.closest('.panel');  const emptyId = 'empty-' + panelId.replace('tab-','');
-
-  panel.querySelectorAll('.sub-panel').forEach(p=>p.classList.remove('active'));  const empty = document.getElementById(emptyId);
-
-  panel.querySelectorAll('.sub-tab').forEach(b=>b.classList.remove('active'));  if (empty) empty.classList.toggle('visible', visible === 0 && q !== '');
-
-  document.getElementById('sub-'+id).classList.add('active');}
-
+}
+function showSub(id,btn){
+  var panel=btn.closest('.panel');
+  panel.querySelectorAll('.spanel').forEach(function(p){p.classList.remove('active')});
+  panel.querySelectorAll('.stab').forEach(function(b){b.classList.remove('active')});
+  document.getElementById('s-'+id).classList.add('active');
   btn.classList.add('active');
-
-}function toggleTheme() {
-
-function filterCards(query, panelId) {  const html = document.documentElement;
-
-  const q = query.toLowerCase().trim();  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-
-  const panel = document.getElementById(panelId);}
-
-  const cards = panel.querySelectorAll('.card');
-
-  let visible = 0;let toastTimer;
-
-  cards.forEach(card => {function copy(btn, text) {
-
-    const show = !q || (card.dataset.search||'').includes(q);  navigator.clipboard.writeText(text).catch(() => {
-
-    card.style.display = show ? '' : 'none';    const ta = document.createElement('textarea');
-
-    if (show) visible++;    ta.value = text; document.body.appendChild(ta);
-
-  });    ta.select(); document.execCommand('copy'); ta.remove();
-
-  const empty = document.getElementById('empty-'+panelId.replace('sub-',''));  });
-
-  if (empty) empty.classList.toggle('visible', visible===0 && q!=='');  if (btn && btn.classList && btn.classList.contains('copy-btn')) {
-
-}    btn.classList.add('copied');
-
-function toggleTheme() {    setTimeout(() => btn.classList.remove('copied'), 1400);
-
-  const h = document.documentElement;  }
-
-  h.setAttribute('data-theme', h.getAttribute('data-theme')==='dark'?'light':'dark');  const t = document.getElementById('toast');
-
-}  t.textContent = '"' + text + '" copiado!';
-
-let toastTimer;  t.classList.add('show');
-
-function copy(btn, text) {  clearTimeout(toastTimer);
-
-  navigator.clipboard.writeText(text).catch(()=>{  toastTimer = setTimeout(() => t.classList.remove('show'), 2000);
-
-    const ta=document.createElement('textarea'); ta.value=text;}
-
-    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();</script>
-
-  });</body>
-
-  if (btn&&btn.classList&&btn.classList.contains('copy-btn')) {</html>
-
-    btn.classList.add('copied'); setTimeout(()=>btn.classList.remove('copied'),1400);
+}
+function filterCards(input){
+  var q=input.value.toLowerCase().trim();
+  var sp=input.closest('.spanel');
+  var cards=sp.querySelectorAll('.card');
+  var vis=0;
+  cards.forEach(function(card){
+    var show=!q||(card.dataset.search||'').indexOf(q)!==-1;
+    card.style.display=show?'':'none';
+    if(show)vis++;
+  });
+  var em=sp.querySelector('.empty');
+  if(em)em.classList.toggle('vis',vis===0&&q!=='');
+}
+function toggleTheme(){
+  var h=document.documentElement;
+  h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');
+}
+var activeCard=null;
+var activeTimer=null;
+function doCopy(btn,text){
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).catch(function(){fbCopy(text)});
+  }else{fbCopy(text)}
+  if(btn&&btn.classList.contains('cpb')){
+    btn.innerHTML=CHECK;
+    btn.classList.add('copied');
+    setTimeout(function(){btn.innerHTML=COPY;btn.classList.remove('copied')},1800);
   }
-  const t=document.getElementById('toast');
-  t.textContent='"'+text+'" copiado!';
+  var card=btn.closest('.card');
+  if(card){
+    if(activeCard&&activeCard!==card)activeCard.classList.remove('copying');
+    clearTimeout(activeTimer);
+    card.classList.add('copying');
+    activeCard=card;
+    activeTimer=setTimeout(function(){card.classList.remove('copying');activeCard=null},4000);
+  }
+  showToast(text);
+}
+function fbCopy(text){
+  var ta=document.createElement('textarea');ta.value=text;
+  ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy')}catch(e){}
+  ta.remove();
+}
+var toastTimer;
+function showToast(text){
+  var t=document.getElementById('toast');
+  var d=text.length>20?text.slice(0,8)+'…'+text.slice(-6):text;
+  t.innerHTML='<span style="opacity:.6">Copiado:</span> '+d;
   t.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>t.classList.remove('show'),2000);
+  toastTimer=setTimeout(function(){t.classList.remove('show')},2200);
 }
 </script>
 </body>
