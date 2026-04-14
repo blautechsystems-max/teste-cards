@@ -81,99 +81,57 @@
     background-image: var(--noise);
   }
 
-  /* ── Layout ── */
   .wrap { max-width: 1000px; margin: 0 auto; }
 
-  /* ── Header ── */
   .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 36px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; margin-bottom: 36px; flex-wrap: wrap;
   }
-
   .header-left { display: flex; align-items: center; gap: 16px; }
-
   .logo-badge {
     display: flex; align-items: center; gap: 7px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: 6px 12px;
-    border-radius: 8px;
-    white-space: nowrap;
+    background: var(--surface2); border: 1px solid var(--border);
+    color: var(--text); font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; padding: 6px 12px; border-radius: 8px; white-space: nowrap;
   }
-
   .logo-dot {
     width: 6px; height: 6px; border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 6px var(--green);
-    animation: pulse 2.4s ease-in-out infinite;
-    flex-shrink: 0;
+    background: var(--green); box-shadow: 0 0 6px var(--green);
+    animation: pulse 2.4s ease-in-out infinite; flex-shrink: 0;
   }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
-
-  .header-info {}
   .header-title { font-size: 20px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
   .header-sub { font-size: 12px; color: var(--text3); margin-top: 4px; font-weight: 400; }
-
   .header-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 
-  /* ── Theme toggle ── */
   .theme-toggle {
-    width: 36px; height: 36px;
-    border-radius: 9px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--text2);
-    transition: all .18s;
-    flex-shrink: 0;
+    width: 36px; height: 36px; border-radius: 9px;
+    border: 1px solid var(--border); background: var(--surface2);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    color: var(--text2); transition: all .18s; flex-shrink: 0;
   }
   .theme-toggle:hover { background: var(--surface3); color: var(--text); }
   .theme-toggle svg { width: 16px; height: 16px; }
-  .icon-sun { display: none; }
-  .icon-moon { display: block; }
+  .icon-sun { display: none; } .icon-moon { display: block; }
   [data-theme="light"] .icon-sun { display: block; }
   [data-theme="light"] .icon-moon { display: none; }
 
-  /* ── Provider tabs ── */
   .provider-tabs {
-    display: flex; gap: 4px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 3px;
+    display: flex; gap: 4px; background: var(--surface2);
+    border: 1px solid var(--border); border-radius: 10px; padding: 3px;
   }
   .tab-btn {
-    padding: 6px 16px;
-    border-radius: 7px;
-    border: none;
-    background: transparent;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all .18s;
-    white-space: nowrap;
+    padding: 6px 16px; border-radius: 7px; border: none; background: transparent;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+    color: var(--text2); cursor: pointer; transition: all .18s; white-space: nowrap;
   }
   .tab-btn.active {
-    background: var(--surface3);
-    color: var(--text);
+    background: var(--surface3); color: var(--text);
     box-shadow: 0 1px 3px rgba(0,0,0,.2);
   }
   .tab-btn:hover:not(.active) { color: var(--text); }
 
-  /* ── Section ── */
   .section-head {
     display: flex; align-items: center; gap: 12px;
     margin-bottom: 14px; margin-top: 36px;
@@ -181,57 +139,40 @@
   .section-head:first-child { margin-top: 0; }
   .section-label {
     font-size: 10.5px; font-weight: 600; letter-spacing: .12em;
-    text-transform: uppercase; color: var(--text3);
-    white-space: nowrap;
+    text-transform: uppercase; color: var(--text3); white-space: nowrap;
     font-family: 'IBM Plex Mono', monospace;
   }
   .section-line { flex: 1; height: 1px; background: var(--border); }
 
-  /* ── Grid ── */
   .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(296px, 1fr));
-    gap: 10px;
-    margin-bottom: 6px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(296px, 1fr));
+    gap: 10px; margin-bottom: 6px;
   }
 
-  /* ── Card ── */
   .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: var(--shadow-card);
-    overflow: hidden;
-    transition: transform .18s, box-shadow .18s, border-color .18s;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; box-shadow: var(--shadow-card);
+    overflow: hidden; transition: transform .18s, box-shadow .18s, border-color .18s;
     position: relative;
   }
-  .card::before {
-    content: '';
-    position: absolute; inset: 0; border-radius: 14px;
-    opacity: 0;
-    transition: opacity .2s;
-    pointer-events: none;
-  }
   .card:hover {
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px); box-shadow: var(--shadow-lg);
     border-color: var(--border2);
   }
+  .card[data-status="success"] { border-left: 3px solid var(--green); }
+  .card[data-status="error"]   { border-left: 3px solid var(--red); }
+  .card[data-status="pending"] { border-left: 3px solid var(--yellow); }
+  .card[data-status="info"]    { border-left: 3px solid var(--blue); }
 
   .card-header {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 14px 10px;
-    border-bottom: 1px solid var(--border);
-    gap: 8px;
+    padding: 12px 14px 10px; border-bottom: 1px solid var(--border); gap: 8px;
   }
-
   .card-brand { display: flex; align-items: center; gap: 9px; min-width: 0; }
-
   .brand-icon {
     width: 38px; height: 25px; border-radius: 5px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 9px; font-weight: 800; letter-spacing: .04em;
-    flex-shrink: 0;
+    font-size: 9px; font-weight: 800; letter-spacing: .04em; flex-shrink: 0;
     font-family: 'IBM Plex Mono', monospace;
   }
   .brand-icon.visa { background: linear-gradient(135deg,#1a1f71,#2a35a8); color: #fff; font-size: 10px; letter-spacing: .06em; }
@@ -239,120 +180,64 @@
     background: linear-gradient(135deg,#1a1a1a 0%,#333 100%);
     position: relative; overflow: hidden;
   }
-  .brand-icon.mastercard::before,
-  .brand-icon.mastercard::after {
-    content: ''; position: absolute;
-    width: 18px; height: 18px; border-radius: 50%;
+  .brand-icon.mastercard::before, .brand-icon.mastercard::after {
+    content: ''; position: absolute; width: 18px; height: 18px; border-radius: 50%;
   }
   .brand-icon.mastercard::before { background: #eb001b; left: 3px; }
   .brand-icon.mastercard::after { background: #f79e1b; right: 3px; opacity: .85; }
   .brand-icon.amex { background: linear-gradient(135deg,#006fcf,#009ddc); color: #fff; font-size: 8px; }
-  .brand-icon.elo { background: linear-gradient(135deg,#111,#333); color: #FFD700; font-size: 9px; }
-  .brand-icon.mp { background: linear-gradient(135deg,#009ee3,#00b0ea); color: #fff; font-size: 7px; text-align: center; line-height: 1.2; }
-
   .brand-name {
-    font-size: 12.5px; font-weight: 600;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    letter-spacing: -.01em;
+    font-size: 12.5px; font-weight: 600; white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; letter-spacing: -.01em;
   }
 
-  /* ── Status badges ── */
   .status-badge {
     font-size: 10px; font-weight: 600; padding: 3px 8px;
     border-radius: 20px; letter-spacing: .04em; white-space: nowrap;
-    font-family: 'IBM Plex Mono', monospace;
-    flex-shrink: 0;
+    font-family: 'IBM Plex Mono', monospace; flex-shrink: 0;
   }
-  .status-badge.success {
-    background: var(--green-soft);
-    color: var(--green);
-    border: 1px solid rgba(52,214,113,.2);
-  }
-  .status-badge.error {
-    background: var(--red-soft);
-    color: var(--red);
-    border: 1px solid rgba(242,88,88,.2);
-  }
-  .status-badge.pending {
-    background: var(--yellow-soft);
-    color: var(--yellow);
-    border: 1px solid rgba(245,166,35,.2);
-  }
-  .status-badge.info {
-    background: var(--blue-soft);
-    color: var(--blue);
-    border: 1px solid rgba(91,138,245,.2);
-  }
+  .status-badge.success { background: var(--green-soft); color: var(--green); border: 1px solid rgba(52,214,113,.2); }
+  .status-badge.error   { background: var(--red-soft); color: var(--red); border: 1px solid rgba(242,88,88,.2); }
+  .status-badge.pending { background: var(--yellow-soft); color: var(--yellow); border: 1px solid rgba(245,166,35,.2); }
+  .status-badge.info    { background: var(--blue-soft); color: var(--blue); border: 1px solid rgba(91,138,245,.2); }
 
-  /* ── Card body ── */
   .card-body { padding: 10px 14px 12px; }
-
   .field-row {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 5px 0;
-    border-bottom: 1px solid var(--border);
-    gap: 8px;
+    padding: 5px 0; border-bottom: 1px solid var(--border); gap: 8px;
   }
   .field-row:last-child { border-bottom: none; padding-bottom: 0; }
-
   .field-label {
     font-size: 10.5px; color: var(--text3); font-weight: 500;
     letter-spacing: .04em; min-width: 82px; flex-shrink: 0;
     font-family: 'IBM Plex Mono', monospace;
   }
-
   .field-value-wrap { display: flex; align-items: center; gap: 7px; min-width: 0; }
-
   .field-value {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text);
-    letter-spacing: .04em;
-    white-space: nowrap;
+    font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 500;
+    color: var(--text); letter-spacing: .04em; white-space: nowrap;
   }
   .field-value.number { font-size: 12px; letter-spacing: .07em; }
 
-  /* ── Copy button ── */
   .copy-btn {
     width: 24px; height: 24px; border-radius: 6px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    color: var(--text3);
-    transition: all .15s;
-    flex-shrink: 0;
+    border: 1px solid var(--border); background: var(--surface2);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    color: var(--text3); transition: all .15s; flex-shrink: 0;
   }
-  .copy-btn:hover {
-    background: var(--accent-soft);
-    border-color: var(--accent);
-    color: var(--accent);
-    box-shadow: 0 0 8px var(--accent-glow);
-  }
-  .copy-btn.copied {
-    background: var(--green-soft);
-    border-color: var(--green);
-    color: var(--green);
-    box-shadow: 0 0 8px rgba(52,214,113,.2);
-  }
+  .copy-btn:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+  .copy-btn.copied { background: var(--green-soft); border-color: var(--green); color: var(--green); box-shadow: 0 0 8px rgba(52,214,113,.2); }
   .copy-btn svg { width: 12px; height: 12px; pointer-events: none; }
 
-  /* ── Status table ── */
   .status-table-wrap {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    box-shadow: var(--shadow-card);
-    overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; box-shadow: var(--shadow-card); overflow: hidden;
   }
   .status-table { width: 100%; border-collapse: collapse; }
   .status-table th {
     font-size: 10px; font-weight: 600; letter-spacing: .1em;
-    text-transform: uppercase; color: var(--text3);
-    background: var(--surface2);
-    padding: 10px 16px; text-align: left;
-    border-bottom: 1px solid var(--border);
+    text-transform: uppercase; color: var(--text3); background: var(--surface2);
+    padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--border);
     font-family: 'IBM Plex Mono', monospace;
   }
   .status-table td {
@@ -362,105 +247,62 @@
   .status-table tr:last-child td { border-bottom: none; }
   .status-table tr:hover td { background: var(--surface2); }
   .status-table td:last-child { color: var(--text2); font-size: 12.5px; }
-
   .code-chip {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11.5px; font-weight: 600;
-    background: var(--accent-soft);
-    border: 1px solid rgba(91,138,245,.18);
-    padding: 2px 8px; border-radius: 5px;
-    color: var(--accent);
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all .15s;
-    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600;
+    background: var(--accent-soft); border: 1px solid rgba(91,138,245,.18);
+    padding: 2px 8px; border-radius: 5px; color: var(--accent);
+    white-space: nowrap; cursor: pointer; transition: all .15s; display: inline-block;
   }
-  .code-chip:hover {
-    background: var(--accent);
-    color: #fff;
-    border-color: var(--accent);
-  }
+  .code-chip:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-  /* ── Panel ── */
   .section-panel { display: block; }
   .section-panel.hidden { display: none; }
 
-  /* ── Search ── */
-  .search-bar {
-    position: relative; margin-bottom: 20px;
-  }
+  .search-bar { position: relative; margin-bottom: 20px; }
   .search-bar input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 9px 14px 9px 38px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    color: var(--text);
-    outline: none;
-    transition: border-color .15s, box-shadow .15s;
+    width: 100%; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 9px 14px 9px 38px;
+    font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text);
+    outline: none; transition: border-color .15s, box-shadow .15s;
   }
   .search-bar input::placeholder { color: var(--text3); }
-  .search-bar input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-glow);
-  }
+  .search-bar input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
   .search-icon {
     position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
     color: var(--text3); pointer-events: none;
   }
   .search-icon svg { width: 15px; height: 15px; display: block; }
 
-  /* ── Toast ── */
   .toast {
     position: fixed; bottom: 28px; left: 50%;
     transform: translateX(-50%) translateY(70px);
-    background: var(--surface3);
-    border: 1px solid var(--border2);
-    color: var(--text);
-    font-size: 12.5px; font-weight: 500;
+    background: var(--surface3); border: 1px solid var(--border2);
+    color: var(--text); font-size: 12.5px; font-weight: 500;
     padding: 9px 18px; border-radius: 10px;
     box-shadow: 0 8px 32px rgba(0,0,0,.3);
     transition: transform .28s cubic-bezier(.34,1.56,.64,1), opacity .2s;
-    opacity: 0; pointer-events: none; z-index: 999;
-    white-space: nowrap;
+    opacity: 0; pointer-events: none; z-index: 999; white-space: nowrap;
     font-family: 'IBM Plex Mono', monospace;
     display: flex; align-items: center; gap: 8px;
   }
   .toast::before {
-    content: '';
-    width: 6px; height: 6px; border-radius: 50%;
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
     background: var(--green); flex-shrink: 0;
   }
   .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-  /* ── Responsive ── */
+  .empty-state { text-align: center; padding: 40px 20px; color: var(--text3); font-size: 13px; display: none; }
+  .empty-state.visible { display: block; }
+
   @media(max-width: 640px) {
     .header { flex-direction: column; align-items: flex-start; }
     .header-right { width: 100%; justify-content: space-between; }
     .cards-grid { grid-template-columns: 1fr; }
     body { padding: 20px 14px 60px; }
   }
-
-  /* ── Scrollbar ── */
   ::-webkit-scrollbar { width: 5px; height: 5px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
-
-  /* ── Card accent left strip ── */
-  .card[data-status="success"] { border-left: 3px solid var(--green); }
-  .card[data-status="error"] { border-left: 3px solid var(--red); }
-  .card[data-status="pending"] { border-left: 3px solid var(--yellow); }
-  .card[data-status="info"] { border-left: 3px solid var(--blue); }
-
-  /* ── Empty state ── */
-  .empty-state {
-    text-align: center; padding: 40px 20px;
-    color: var(--text3); font-size: 13px;
-    display: none;
-  }
-  .empty-state.visible { display: block; }
 </style>
 </head>
 <body>
@@ -470,17 +312,19 @@
   <!-- Header -->
   <div class="header">
     <div class="header-left">
-      <div class="logo-badge"><div class="logo-dot"></div>TEST MODE</div>
+      <div class="logo-badge"><div class="logo-dot"></div>SANDBOX</div>
       <div class="header-info">
-        <div class="header-title">Cartões de Teste</div>
-        <div class="header-sub">Yuno &amp; Mercado Pago · clique para copiar</div>
+        <div class="header-title">Yuno · Test Cards</div>
+        <div class="header-sub">Dados oficiais · clique para copiar</div>
       </div>
     </div>
     <div class="header-right">
       <div class="provider-tabs">
-        <button class="tab-btn active" onclick="showTab('yuno',this)">Yuno</button>
-        <button class="tab-btn" onclick="showTab('mp',this)">Mercado Pago</button>
-        <button class="tab-btn" onclick="showTab('codes',this)">Status Codes</button>
+        <button class="tab-btn active" onclick="showTab('visa',this)">Visa</button>
+        <button class="tab-btn" onclick="showTab('mc',this)">Mastercard</button>
+        <button class="tab-btn" onclick="showTab('amex',this)">Amex</button>
+        <button class="tab-btn" onclick="showTab('3ds',this)">3DS</button>
+        <button class="tab-btn" onclick="showTab('codes',this)">Códigos</button>
       </div>
       <button class="theme-toggle" onclick="toggleTheme()" title="Alternar tema">
         <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
@@ -489,477 +333,200 @@
     </div>
   </div>
 
-  <!-- ════════ YUNO PANEL ════════ -->
-  <div class="section-panel" id="tab-yuno">
-
+  <!-- ════════ VISA ════════ -->
+  <div class="section-panel" id="tab-visa">
     <div class="search-bar">
       <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-      <input type="text" placeholder="Buscar cartão, bandeira ou status..." oninput="filterCards(this.value,'tab-yuno')">
+      <input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'tab-visa')">
     </div>
 
-    <div class="section-head"><span class="section-label">Aprovados</span><div class="section-line"></div></div>
-    <div class="cards-grid">
+    <div class="section-head"><span class="section-label">Visa · Cartões de Teste</span><div class="section-line"></div></div>
+    <div class="cards-grid" id="grid-visa"></div>
+    <div class="empty-state" id="empty-visa">Nenhum cartão encontrado.</div>
+  </div>
 
-      <div class="card" data-status="success" data-search="mastercard aprovado apro">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">Mastercard</div></div>
-          <span class="status-badge success">Aprovado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5031 4332 1540 6351</span><button class="copy-btn" onclick="copy(this,'5031433215406351')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">123</span><button class="copy-btn" onclick="copy(this,'123')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">11/30</span><button class="copy-btn" onclick="copy(this,'11/30')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">APRO</span><button class="copy-btn" onclick="copy(this,'APRO')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="success" data-search="visa aprovado apro cpf">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa</div></div>
-          <span class="status-badge success">Aprovado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4235 6477 2802 5682</span><button class="copy-btn" onclick="copy(this,'4235647728025682')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">123</span><button class="copy-btn" onclick="copy(this,'123')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">11/30</span><button class="copy-btn" onclick="copy(this,'11/30')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">APRO</span><button class="copy-btn" onclick="copy(this,'APRO')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CPF</span><div class="field-value-wrap"><span class="field-value">12345678909</span><button class="copy-btn" onclick="copy(this,'12345678909')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="success" data-search="amex american express aprovado apro">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon amex">AMEX</div><div class="brand-name">American Express</div></div>
-          <span class="status-badge success">Aprovado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">3753 651535 56885</span><button class="copy-btn" onclick="copy(this,'375365153556885')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">1234</span><button class="copy-btn" onclick="copy(this,'1234')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">11/30</span><button class="copy-btn" onclick="copy(this,'11/30')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">APRO</span><button class="copy-btn" onclick="copy(this,'APRO')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="success" data-search="elo aprovado apro">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon elo">ELO</div><div class="brand-name">Elo</div></div>
-          <span class="status-badge success">Aprovado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5067 7667 8388 8311</span><button class="copy-btn" onclick="copy(this,'5067766783888311')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">123</span><button class="copy-btn" onclick="copy(this,'123')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">11/30</span><button class="copy-btn" onclick="copy(this,'11/30')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">APRO</span><button class="copy-btn" onclick="copy(this,'APRO')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="section-head"><span class="section-label">Recusados / Rejeitados</span><div class="section-line"></div></div>
-    <div class="cards-grid">
-
-      <div class="card" data-status="error" data-search="mastercard erro geral othe recusado">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">Erro Geral</div></div>
-          <span class="status-badge error">Recusado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5031 4332 1540 6351</span><button class="copy-btn" onclick="copy(this,'5031433215406351')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">OTHE</span><button class="copy-btn" onclick="copy(this,'OTHE')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-          <div class="field-row"><span class="field-label">CPF</span><div class="field-value-wrap"><span class="field-value">12345678909</span><button class="copy-btn" onclick="copy(this,'12345678909')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="pending" data-search="visa pendente cont pagamento">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Pagamento Pendente</div></div>
-          <span class="status-badge pending">Pendente</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4235 6477 2802 5682</span><button class="copy-btn" onclick="copy(this,'4235647728025682')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">CONT</span><button class="copy-btn" onclick="copy(this,'CONT')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa saldo insuficiente fund recusado">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Saldo Insuficiente</div></div>
-          <span class="status-badge error">Recusado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4235 6477 2802 5682</span><button class="copy-btn" onclick="copy(this,'4235647728025682')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">FUND</span><button class="copy-btn" onclick="copy(this,'FUND')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard cvv invalido secu seguranca">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">CVV Inválido</div></div>
-          <span class="status-badge error">Recusado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5031 4332 1540 6351</span><button class="copy-btn" onclick="copy(this,'5031433215406351')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">SECU</span><button class="copy-btn" onclick="copy(this,'SECU')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="elo vencimento expi data">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon elo">ELO</div><div class="brand-name">Data de Vencimento</div></div>
-          <span class="status-badge error">Recusado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5067 7667 8388 8311</span><button class="copy-btn" onclick="copy(this,'5067766783888311')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">EXPI</span><button class="copy-btn" onclick="copy(this,'EXPI')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard duplicado dupl">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">Pagamento Duplicado</div></div>
-          <span class="status-badge error">Rejeitado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5031 4332 1540 6351</span><button class="copy-btn" onclick="copy(this,'5031433215406351')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">DUPL</span><button class="copy-btn" onclick="copy(this,'DUPL')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa bloqueado lock">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Cartão Bloqueado</div></div>
-          <span class="status-badge error">Rejeitado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4235 6477 2802 5682</span><button class="copy-btn" onclick="copy(this,'4235647728025682')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">LOCK</span><button class="copy-btn" onclick="copy(this,'LOCK')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="amex lista negra blac">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon amex">AMEX</div><div class="brand-name">Lista Negra</div></div>
-          <span class="status-badge error">Rejeitado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">3753 651535 56885</span><button class="copy-btn" onclick="copy(this,'375365153556885')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">BLAC</span><button class="copy-btn" onclick="copy(this,'BLAC')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">1234 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="elo pin tentativas atte excedidas">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon elo">ELO</div><div class="brand-name">Tentativas PIN Excedidas</div></div>
-          <span class="status-badge error">Rejeitado</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5067 7667 8388 8311</span><button class="copy-btn" onclick="copy(this,'5067766783888311')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">ATTE</span><button class="copy-btn" onclick="copy(this,'ATTE')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="info" data-search="mastercard test valor regra">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">Testar Regra de Valores</div></div>
-          <span class="status-badge info">TEST</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5031 4332 1540 6351</span><button class="copy-btn" onclick="copy(this,'5031433215406351')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">TEST</span><button class="copy-btn" onclick="copy(this,'TEST')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc.</span><div class="field-value-wrap"><span class="field-value">123 / 11/30</span></div></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="empty-state" id="empty-yuno">Nenhum cartão encontrado para essa busca.</div>
-  </div><!-- /tab-yuno -->
-
-
-  <!-- ════════ MERCADO PAGO PANEL ════════ -->
-  <div class="section-panel hidden" id="tab-mp">
-
+  <!-- ════════ MASTERCARD ════════ -->
+  <div class="section-panel hidden" id="tab-mc">
     <div class="search-bar">
       <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-      <input type="text" placeholder="Buscar cartão, bandeira ou status..." oninput="filterCards(this.value,'tab-mp')">
+      <input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'tab-mc')">
     </div>
 
-    <div class="section-head"><span class="section-label">Visa · Resultados de Transação</span><div class="section-line"></div></div>
-    <div class="cards-grid">
+    <div class="section-head"><span class="section-label">Mastercard · Cartões de Teste</span><div class="section-line"></div></div>
+    <div class="cards-grid" id="grid-mc"></div>
+    <div class="empty-state" id="empty-mc">Nenhum cartão encontrado.</div>
+  </div>
 
-      <div class="card" data-status="success" data-search="visa aprovado succeeded john doe">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · Aprovado</div></div>
-          <span class="status-badge success">SUCCEEDED</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0002</span><button class="copy-btn" onclick="copy(this,'4507990000000002')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">123</span><button class="copy-btn" onclick="copy(this,'123')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">11/28</span><button class="copy-btn" onclick="copy(this,'11/28')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">John Doe</span><button class="copy-btn" onclick="copy(this,'John Doe')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa sem fundos insufficient_funds">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · Sem Fundos</div></div>
-          <span class="status-badge error">INSUFFICIENT_FUNDS</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0010</span><button class="copy-btn" onclick="copy(this,'4507990000000010')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">123</span><button class="copy-btn" onclick="copy(this,'123')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">11/28</span><button class="copy-btn" onclick="copy(this,'11/28')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">John Doe</span><button class="copy-btn" onclick="copy(this,'John Doe')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa banco recusado declined_by_bank">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · Recusado Banco</div></div>
-          <span class="status-badge error">DECLINED_BY_BANK</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0028</span><button class="copy-btn" onclick="copy(this,'4507990000000028')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa do not honor recusado">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · Do Not Honor</div></div>
-          <span class="status-badge error">DO_NOT_HONOR</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0036</span><button class="copy-btn" onclick="copy(this,'4507990000000036')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa cvv invalido invalid_security_code">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · CVV Inválido</div></div>
-          <span class="status-badge error">INVALID_SECURITY_CODE</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0044</span><button class="copy-btn" onclick="copy(this,'4507990000000044')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa dados invalidos invalid_card_data">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · Dados Inválidos</div></div>
-          <span class="status-badge error">INVALID_CARD_DATA</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0051</span><button class="copy-btn" onclick="copy(this,'4507990000000051')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa roubado stolen reported_stolen">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · Cartão Roubado</div></div>
-          <span class="status-badge error">REPORTED_STOLEN</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0069</span><button class="copy-btn" onclick="copy(this,'4507990000000069')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="visa erro error generico">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon visa">VISA</div><div class="brand-name">Visa · Erro</div></div>
-          <span class="status-badge error">ERROR</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">4507 9900 0000 0077</span><button class="copy-btn" onclick="copy(this,'4507990000000077')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
+  <!-- ════════ AMEX ════════ -->
+  <div class="section-panel hidden" id="tab-amex">
+    <div class="search-bar">
+      <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+      <input type="text" placeholder="Buscar cartão ou status..." oninput="filterCards(this.value,'tab-amex')">
     </div>
 
-    <div class="section-head"><span class="section-label">Mastercard · Resultados de Transação</span><div class="section-line"></div></div>
-    <div class="cards-grid">
+    <div class="section-head"><span class="section-label">American Express · Cartões de Teste</span><div class="section-line"></div></div>
+    <div class="cards-grid" id="grid-amex"></div>
+    <div class="empty-state" id="empty-amex">Nenhum cartão encontrado.</div>
+  </div>
 
-      <div class="card" data-status="success" data-search="mastercard aprovado succeeded john doe">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · Aprovado</div></div>
-          <span class="status-badge success">SUCCEEDED</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0002</span><button class="copy-btn" onclick="copy(this,'5252440000000002')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">123</span><button class="copy-btn" onclick="copy(this,'123')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">11/28</span><button class="copy-btn" onclick="copy(this,'11/28')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">John Doe</span><button class="copy-btn" onclick="copy(this,'John Doe')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard sem fundos insufficient_funds">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · Sem Fundos</div></div>
-          <span class="status-badge error">INSUFFICIENT_FUNDS</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0010</span><button class="copy-btn" onclick="copy(this,'5252440000000010')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard banco recusado declined_by_bank">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · Recusado Banco</div></div>
-          <span class="status-badge error">DECLINED_BY_BANK</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0028</span><button class="copy-btn" onclick="copy(this,'5252440000000028')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard do not honor">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · Do Not Honor</div></div>
-          <span class="status-badge error">DO_NOT_HONOR</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0036</span><button class="copy-btn" onclick="copy(this,'5252440000000036')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard cvv invalido invalid_security_code">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · CVV Inválido</div></div>
-          <span class="status-badge error">INVALID_SECURITY_CODE</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0044</span><button class="copy-btn" onclick="copy(this,'5252440000000044')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard dados invalidos invalid_card_data">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · Dados Inválidos</div></div>
-          <span class="status-badge error">INVALID_CARD_DATA</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0051</span><button class="copy-btn" onclick="copy(this,'5252440000000051')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard roubado stolen reported_stolen">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · Cartão Roubado</div></div>
-          <span class="status-badge error">REPORTED_STOLEN</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0069</span><button class="copy-btn" onclick="copy(this,'5252440000000069')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
-      <div class="card" data-status="error" data-search="mastercard erro error">
-        <div class="card-header">
-          <div class="card-brand"><div class="brand-icon mastercard"></div><div class="brand-name">MC · Erro</div></div>
-          <span class="status-badge error">ERROR</span>
-        </div>
-        <div class="card-body">
-          <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">5252 4400 0000 0077</span><button class="copy-btn" onclick="copy(this,'5252440000000077')"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg></button></div></div>
-          <div class="field-row"><span class="field-label">CVV / Venc. / Titular</span><div class="field-value-wrap"><span class="field-value">123 / 11/28 / John Doe</span></div></div>
-        </div>
-      </div>
-
+  <!-- ════════ 3DS ════════ -->
+  <div class="section-panel hidden" id="tab-3ds">
+    <div class="section-head"><span class="section-label">3DS · Mastercard Test Cards</span><div class="section-line"></div></div>
+    <div class="status-table-wrap">
+      <table class="status-table">
+        <thead><tr><th>Número</th><th>3DS 2.x Response</th><th>3DS 1.x DS</th><th>3DS 1.x ACS</th></tr></thead>
+        <tbody id="tbl-3ds"></tbody>
+      </table>
     </div>
-    <div class="empty-state" id="empty-mp">Nenhum cartão encontrado para essa busca.</div>
-  </div><!-- /tab-mp -->
+  </div>
 
-
-  <!-- ════════ STATUS CODES PANEL ════════ -->
+  <!-- ════════ CÓDIGOS ════════ -->
   <div class="section-panel hidden" id="tab-codes">
-
-    <div class="section-head"><span class="section-label">Yuno · Nomes de Titular → Status</span><div class="section-line"></div></div>
+    <div class="section-head"><span class="section-label">Transaction Response Codes</span><div class="section-line"></div></div>
     <div class="status-table-wrap">
       <table class="status-table">
-        <thead>
-          <tr>
-            <th>Titular (nome)</th>
-            <th>Status resultante</th>
-            <th>Descrição</th>
-          </tr>
-        </thead>
-        <tbody id="yuno-status-rows"></tbody>
+        <thead><tr><th>Código</th><th>Significado</th></tr></thead>
+        <tbody id="tbl-codes"></tbody>
       </table>
     </div>
-
-    <div class="section-head" style="margin-top:32px"><span class="section-label">Mercado Pago · Transaction Response Codes</span><div class="section-line"></div></div>
-    <div class="status-table-wrap">
-      <table class="status-table">
-        <thead>
-          <tr>
-            <th>Código</th>
-            <th>Significado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><span class="code-chip" onclick="copy(this,'SUCCEEDED')">SUCCEEDED</span></td><td>Transação aprovada com sucesso</td></tr>
-          <tr><td><span class="code-chip" onclick="copy(this,'INSUFFICIENT_FUNDS')">INSUFFICIENT_FUNDS</span></td><td>Saldo insuficiente no cartão</td></tr>
-          <tr><td><span class="code-chip" onclick="copy(this,'DECLINED_BY_BANK')">DECLINED_BY_BANK</span></td><td>Recusado pelo banco emissor</td></tr>
-          <tr><td><span class="code-chip" onclick="copy(this,'DO_NOT_HONOR')">DO_NOT_HONOR</span></td><td>Banco não autorizou (genérico)</td></tr>
-          <tr><td><span class="code-chip" onclick="copy(this,'INVALID_SECURITY_CODE')">INVALID_SECURITY_CODE</span></td><td>Código de segurança (CVV) inválido</td></tr>
-          <tr><td><span class="code-chip" onclick="copy(this,'INVALID_CARD_DATA')">INVALID_CARD_DATA</span></td><td>Dados do cartão inválidos</td></tr>
-          <tr><td><span class="code-chip" onclick="copy(this,'REPORTED_STOLEN')">REPORTED_STOLEN</span></td><td>Cartão reportado como roubado</td></tr>
-          <tr><td><span class="code-chip" onclick="copy(this,'ERROR')">ERROR</span></td><td>Erro genérico de processamento</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div><!-- /tab-codes -->
+  </div>
 
 </div><!-- /wrap -->
 
-<!-- Toast -->
 <div class="toast" id="toast"></div>
 
 <script>
-const yunoStatuses = [
-  { code: 'APRO', status: 'Pagamento aprovado', desc: 'Aprovado com sucesso' },
-  { code: 'OTHE', status: 'Recusado por erro geral', desc: 'Erro genérico de recusa' },
-  { code: 'CONT', status: 'Pagamento pendente', desc: 'Aguardando confirmação' },
-  { code: 'CALL', status: 'Recusado com validação', desc: 'Requer contato com o banco' },
-  { code: 'FUND', status: 'Saldo insuficiente', desc: 'Saldo insuficiente' },
-  { code: 'SECU', status: 'Código de segurança inválido', desc: 'CVV incorreto' },
-  { code: 'EXPI', status: 'Problema com vencimento', desc: 'Data expirada ou inválida' },
-  { code: 'FORM', status: 'Erro no formulário', desc: 'Dados do formulário inválidos' },
-  { code: 'CARD', status: 'Número ausente', desc: 'Número do cartão ausente' },
-  { code: 'INST', status: 'Parcelas inválidas', desc: 'Número de parcelas inválido' },
-  { code: 'DUPL', status: 'Pagamento duplicado', desc: 'Transação duplicada detectada' },
-  { code: 'LOCK', status: 'Cartão desabilitado', desc: 'Cartão bloqueado' },
-  { code: 'CTNA', status: 'Tipo não permitido', desc: 'Bandeira não aceita' },
-  { code: 'ATTE', status: 'PIN excedido', desc: 'Limite de tentativas atingido' },
-  { code: 'BLAC', status: 'Na lista negra', desc: 'Cartão em lista de bloqueio' },
-  { code: 'UNSU', status: 'Não suportado', desc: 'Operação não suportada' },
-  { code: 'TEST', status: 'Aplicar regra de valores', desc: 'Testar regras por valor' },
+/* ── Dados oficiais Yuno Testing Gateway ── */
+
+const COPY_SVG = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M11 5V3a1 1 0 00-1-1H3a1 1 0 00-1 1v7a1 1 0 001 1h2"/></svg>';
+
+const visaCards = [
+  { num: '4507990000000002', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'SUCCEEDED' },
+  { num: '4507990000000010', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INSUFFICIENT_FUNDS' },
+  { num: '4507990000000028', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DECLINED_BY_BANK' },
+  { num: '4507990000000036', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DO_NOT_HONOR' },
+  { num: '4507990000000044', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_SECURITY_CODE' },
+  { num: '4507990000000051', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_CARD_DATA' },
+  { num: '4507990000000069', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'REPORTED_STOLEN' },
+  { num: '4507990000000077', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'ERROR' },
 ];
 
-const tbody = document.getElementById('yuno-status-rows');
-yunoStatuses.forEach(r => {
-  const tr = document.createElement('tr');
-  tr.innerHTML = `<td><span class="code-chip" onclick="copy(this,'${r.code}')">${r.code}</span></td><td>${r.status}</td><td>${r.desc}</td>`;
-  tbody.appendChild(tr);
-});
+const mcCards = [
+  { num: '5252440000000002', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'SUCCEEDED' },
+  { num: '5252440000000010', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INSUFFICIENT_FUNDS' },
+  { num: '5252440000000028', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DECLINED_BY_BANK' },
+  { num: '5252440000000036', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'DO_NOT_HONOR' },
+  { num: '5252440000000044', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_SECURITY_CODE' },
+  { num: '5252440000000051', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'INVALID_CARD_DATA' },
+  { num: '5252440000000069', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'REPORTED_STOLEN' },
+  { num: '5252440000000077', exp: '11/28', cvv: '123', holder: 'John Doe', code: 'ERROR' },
+];
 
+const amexCards = [
+  { num: '370000000000002', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'SUCCEEDED' },
+  { num: '370000000000010', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'INSUFFICIENT_FUNDS' },
+  { num: '370000000000028', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'DECLINED_BY_BANK' },
+  { num: '370000000000036', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'DO_NOT_HONOR' },
+  { num: '370000000000044', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'INVALID_SECURITY_CODE' },
+  { num: '370000000000051', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'INVALID_CARD_DATA' },
+  { num: '370000000000069', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'REPORTED_STOLEN' },
+  { num: '370000000000077', exp: '11/28', cvv: '1234', holder: 'John Doe', code: 'ERROR' },
+];
+
+const threeDS = [
+  { num: '5333259155643223', resp: 'AUTHENTICATED_APPLICATION_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_Y' },
+  { num: '5306889942833340', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
+  { num: '5328720384582224', resp: 'NOT_AUTHENTICATED_APPLICATION_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
+  { num: '5267648608924299', resp: 'APPLICATION_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
+  { num: '5187434643593002', resp: 'APPLICATION_CHALLENGE_SDK_TRANS_ID_INVALID_FORMAT', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
+  { num: '5512459816707531', resp: 'AUTHENTICATED_BROWSER_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_Y' },
+  { num: '5487971631330522', resp: 'NOT_AUTHENTICATED_BROWSER_FRICTIONLESS', ds: 'ENROLLED_Y', acs: 'TRANSACTION_STATUS_N' },
+  { num: '5424184049821670', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
+  { num: '5204240438720050123', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
+  { num: '5250548692069390', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
+  { num: '5641523891636636', resp: 'BROWSER_CHALLENGE', ds: 'ENROLLED_Y', acs: 'TRANSACTION_CHALLENGE_OTP' },
+];
+
+const txCodes = [
+  { code: 'SUCCEEDED', desc: 'Transação aprovada com sucesso' },
+  { code: 'INSUFFICIENT_FUNDS', desc: 'Saldo insuficiente no cartão' },
+  { code: 'DECLINED_BY_BANK', desc: 'Recusado pelo banco emissor' },
+  { code: 'DO_NOT_HONOR', desc: 'Banco não autorizou (genérico)' },
+  { code: 'INVALID_SECURITY_CODE', desc: 'Código de segurança (CVV) inválido' },
+  { code: 'INVALID_CARD_DATA', desc: 'Dados do cartão inválidos' },
+  { code: 'REPORTED_STOLEN', desc: 'Cartão reportado como roubado' },
+  { code: 'ERROR', desc: 'Erro genérico de processamento' },
+];
+
+/* ── Helpers ── */
+
+function formatNum(n) {
+  if (n.length === 15) return n.slice(0,4)+' '+n.slice(4,10)+' '+n.slice(10);
+  if (n.length > 16) return n.slice(0,4)+' '+n.slice(4,8)+' '+n.slice(8,12)+' '+n.slice(12,16)+' '+n.slice(16);
+  return n.replace(/(.{4})/g, '$1 ').trim();
+}
+
+function statusInfo(code) {
+  if (code === 'SUCCEEDED') return { css: 'success', label: 'SUCCEEDED' };
+  return { css: 'error', label: code };
+}
+
+function brandIcon(brand) {
+  if (brand === 'visa') return '<div class="brand-icon visa">VISA</div>';
+  if (brand === 'mc') return '<div class="brand-icon mastercard"></div>';
+  if (brand === 'amex') return '<div class="brand-icon amex">AMEX</div>';
+  return '';
+}
+function brandLabel(brand) {
+  if (brand === 'visa') return 'Visa';
+  if (brand === 'mc') return 'Mastercard';
+  if (brand === 'amex') return 'American Express';
+  return '';
+}
+
+function copyBtn(text) {
+  return `<button class="copy-btn" onclick="copy(this,'${text}')">${COPY_SVG}</button>`;
+}
+
+function buildCard(c, brand) {
+  const si = statusInfo(c.code);
+  const search = `${brandLabel(brand)} ${c.num} ${c.code} ${c.holder}`.toLowerCase();
+  return `
+    <div class="card" data-status="${si.css}" data-search="${search}">
+      <div class="card-header">
+        <div class="card-brand">${brandIcon(brand)}<div class="brand-name">${brandLabel(brand)} · ${c.code === 'SUCCEEDED' ? 'Aprovado' : c.code.replace(/_/g,' ')}</div></div>
+        <span class="status-badge ${si.css}">${si.label}</span>
+      </div>
+      <div class="card-body">
+        <div class="field-row"><span class="field-label">Número</span><div class="field-value-wrap"><span class="field-value number">${formatNum(c.num)}</span>${copyBtn(c.num)}</div></div>
+        <div class="field-row"><span class="field-label">CVV</span><div class="field-value-wrap"><span class="field-value">${c.cvv}</span>${copyBtn(c.cvv)}</div></div>
+        <div class="field-row"><span class="field-label">Vencimento</span><div class="field-value-wrap"><span class="field-value">${c.exp}</span>${copyBtn(c.exp)}</div></div>
+        <div class="field-row"><span class="field-label">Titular</span><div class="field-value-wrap"><span class="field-value">${c.holder}</span>${copyBtn(c.holder)}</div></div>
+      </div>
+    </div>`;
+}
+
+/* ── Render ── */
+document.getElementById('grid-visa').innerHTML = visaCards.map(c => buildCard(c, 'visa')).join('');
+document.getElementById('grid-mc').innerHTML   = mcCards.map(c => buildCard(c, 'mc')).join('');
+document.getElementById('grid-amex').innerHTML  = amexCards.map(c => buildCard(c, 'amex')).join('');
+
+// 3DS table
+document.getElementById('tbl-3ds').innerHTML = threeDS.map(r =>
+  `<tr>
+    <td><span class="code-chip" onclick="copy(this,'${r.num}')">${formatNum(r.num)}</span></td>
+    <td style="font-size:11.5px">${r.resp}</td>
+    <td>${r.ds}</td>
+    <td>${r.acs}</td>
+  </tr>`
+).join('');
+
+// Codes table
+document.getElementById('tbl-codes').innerHTML = txCodes.map(r =>
+  `<tr><td><span class="code-chip" onclick="copy(this,'${r.code}')">${r.code}</span></td><td>${r.desc}</td></tr>`
+).join('');
+
+/* ── UI ── */
 function showTab(name, btn) {
   document.querySelectorAll('.section-panel').forEach(p => p.classList.add('hidden'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -973,12 +540,12 @@ function filterCards(query, panelId) {
   const cards = panel.querySelectorAll('.card');
   let visible = 0;
   cards.forEach(card => {
-    const searchText = (card.dataset.search || '') + card.innerText.toLowerCase();
-    const show = !q || searchText.includes(q);
+    const show = !q || (card.dataset.search || '').includes(q);
     card.style.display = show ? '' : 'none';
     if (show) visible++;
   });
-  const empty = document.getElementById('empty-' + panelId.replace('tab-',''));
+  const emptyId = 'empty-' + panelId.replace('tab-','');
+  const empty = document.getElementById(emptyId);
   if (empty) empty.classList.toggle('visible', visible === 0 && q !== '');
 }
 
