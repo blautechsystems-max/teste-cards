@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/yuno-test-cards.html" }
+  ]
+}
